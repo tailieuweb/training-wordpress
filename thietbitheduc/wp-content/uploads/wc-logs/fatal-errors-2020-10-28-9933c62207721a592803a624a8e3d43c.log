@@ -1,0 +1,12 @@
+2020-10-28T03:00:46+00:00 CRITICAL Uncaught Error: Call to undefined function hungthinhmart_post_thumbnail() in C:\xampp\htdocs\thietbitheduc\wp-content\themes\theme_thietbitheduc\template-parts\content-search.php:26
+Stack trace:
+#0 C:\xampp\htdocs\thietbitheduc\wp-includes\template.php(732): require()
+#1 C:\xampp\htdocs\thietbitheduc\wp-includes\template.php(676): load_template('C:\\xampp\\htdocs...', false, Array)
+#2 C:\xampp\htdocs\thietbitheduc\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 C:\xampp\htdocs\thietbitheduc\wp-content\themes\theme_thietbitheduc\search.php(36): get_template_part('template-parts/...', 'search')
+#4 C:\xampp\htdocs\thietbitheduc\wp-includes\template-loader.php(106): include('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\thietbitheduc\wp-blog-header.php(19): require_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\thietbitheduc\index.php(17): require('C:\\xampp\\htdocs...')
+#7 {main}
+  thrown in C:\xampp\htdocs\thietbitheduc\wp-content\themes\theme_thietbitheduc\template-parts\content-search.php on line 26
+
