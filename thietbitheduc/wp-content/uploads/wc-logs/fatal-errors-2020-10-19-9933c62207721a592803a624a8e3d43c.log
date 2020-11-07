@@ -1,0 +1,4 @@
+2020-10-19T18:17:02+00:00 CRITICAL syntax error, unexpected '<' in C:\xampp\htdocs\thietbitheduc\wp-content\themes\theme_thietbitheduc\header.php on line 128
+
+2020-10-19T18:17:13+00:00 CRITICAL syntax error, unexpected 'endif' (T_ENDIF) in C:\xampp\htdocs\thietbitheduc\wp-content\themes\theme_thietbitheduc\header.php on line 129
+

@@ -1,0 +1,4 @@
+2020-11-02T05:54:27+00:00 CRITICAL Maximum execution time of 300 seconds exceeded in C:\xampp\htdocs\thietbitheduc\wp-includes\Requests\Transport\cURL.php on line 163
+
+2020-11-02T06:48:19+00:00 CRITICAL Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\thietbitheduc\wp-includes\Requests\Transport\cURL.php on line 163
+
