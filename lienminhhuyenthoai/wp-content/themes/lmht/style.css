@@ -1,0 +1,175 @@
+/*
+ * |---:[Đoạn này sẽ chứa các đoạn giới thiệu và thông tin về theme, như tên theme (Theme Name), tên tác giả (Theme Author), địa chỉ của tác giả (Author URI),...]:---|
+ 
+ * Theme Name: lmht
+ * Description: Đây là một theme đơn giản để thực hành Lập trình theme WordPress
+ * Theme URI: http://localhost/lienminhhuyenthoai/
+ * Version: 1.0
+ * Theme Author: nhomn
+ * Author URI: http://localhost/lienminhhuyenthoai/
+ * Tags: starter theme, framework theme, two-columns, customize
+ * Textdomain: nhomn
+ */
+ body {
+	background: url(https://img.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg?size=626&ext=jpg) no-repeat center 0;
+	background-color: #000;
+	background-size: cover;
+}
+
+/*-------------------------------------------*/
+/*                     Header                */
+/*-------------------------------------------*/
+header#topheader {
+	width: 1191px;
+	margin: 0 auto 15px;
+	background: url(http://localhost/thietbitheduc/wp-content/uploads/2020/11/sprite.png) no-repeat 0 0;
+	height: 233px;
+	z-index: 8;
+	position: relative;
+	top: 10px;
+}
+
+header#topheader #header-content {
+	width: 972px;
+	margin: 0 auto;
+	position: relative;
+}
+
+#main-navigation {
+	position: relative;
+	top: 96px;
+	padding: 0 15px;
+}
+#main-navigation ul {
+	width: 100%;
+	display: table;
+	border-collapse: collapse;
+	margin-left: 0;
+	list-style-type: none;
+	overflow: visible;
+	height: 52px;
+	margin: 0;
+}
+#main-navigation ul>* {
+	display: table-cell;
+	float: none;
+	position: relative;
+	*float: left;
+	top: 20px;
+}
+
+
+#main-navigation ul>li {
+	text-align: center;
+	list-style: none;
+	padding: 0;
+	min-width: 130px;
+}
+#main-navigation ul a {
+	color: #fff;
+	text-transform: uppercase;
+
+}
+
+#groupButtonTop {
+	margin: 116px auto 0;
+	width: 300px;
+	text-align: center;
+}
+
+#groupButtonTop a {
+	color: rgba(255, 255, 255, 0.9);
+	line-height: 66px;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0 15px 0 10px;
+}
+/*-------------------------------------------*/
+/*                      Footer               */
+/*-------------------------------------------*/
+.clear{
+	clear: both;
+}
+.clearfix {
+	clear: both;
+}
+#footer{
+	background: #fff; 
+	
+	padding: 20px 0;
+	border-top: 1px solid #333;
+}
+
+#footer p {
+	font-size: 12px;
+	color: #000; 
+	margin: 10px 0 0 0;
+}
+#footer .logo{
+	float: left;
+	width: 30%;
+}
+#footer .info{
+	float: right;
+	font-size: 10px;
+	line-height: 17px;
+	color: #fff;
+    text-align: center;
+}
+#footer .imgR{
+	float: right;
+	width: 50%;
+}
+/*-------------------------------------------*/
+/*                      Main                 */
+/*-------------------------------------------*/
+.content {
+	margin-top: 60px;
+	padding: 10px;
+	border: 1px solid rgba(84,84,84,0.3);
+	background-color: #dedede;
+	height: auto;
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+.rpwe-block a {
+    color: #257372;
+    font-size: 1.35em;
+}
+/*-------------------------------------------*/
+/*                Chi tiết bài viết          */
+/*-------------------------------------------*/
+.post-template-default img {
+	width: 100%;
+	height: auto;
+}
+.post-template-default section#main-content {
+	padding: 10px;
+    background-color: #dedede;
+}
+.post-template-default .widget.widget_recent_entries {
+	box-sizing: border-box;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: transparent;
+    background-color: #e9eaec;
+    border-left: 1px solid rgba(84,84,84,0.3);
+    border-top: 1px solid rgba(84,84,84,0.3);
+    border-bottom: 1px solid rgba(255,255,255,0.6);
+    border-right: 1px solid rgba(255,255,255,0.6);
+	list-style: none;
+}
+.post-template-default .widget.widget_recent_entries ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.post-template-default .widget.widget_recent_entries li {
+	margin-bottom: 10px;
+}
+.post-template-default .widget.widget_recent_entries li a{
+	color: #257372;
+	font-size: 13px;
+}
+
