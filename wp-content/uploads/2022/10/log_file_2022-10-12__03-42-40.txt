@@ -1,0 +1,41 @@
+
+---Downloaded files---
+The import files for: Music Artist/ Music Guru were successfully downloaded!
+Initial max execution time = 120
+Files info:
+Site URL = http://wordpress.local
+Data file = D:\5-research\1-gh\1-tailieuweb\wordpress\2-source/wp-content/uploads/2022/10/demo-content-import-file_2022-10-12__03-42-40.xml
+Widget file = D:\5-research\1-gh\1-tailieuweb\wordpress\2-source/wp-content/uploads/2022/10/demo-widgets-import-file_2022-10-12__03-42-40.json
+Customizer file = D:\5-research\1-gh\1-tailieuweb\wordpress\2-source/wp-content/uploads/2022/10/demo-customizer-import-file_2022-10-12__03-42-40.dat
+Redux files:
+not defined!
+
+---Importing widgets---
+sidebar-1 : Sidebar does not exist in theme (moving widget to Inactive)
+
+Search - No Title - Imported to Inactive
+Recent Posts - No Title - Imported to Inactive
+Recent Comments - No Title - Imported to Inactive
+Archives - No Title - Imported to Inactive
+Categories - No Title - Imported to Inactive
+Meta - No Title - Imported to Inactive
+
+music_artist_footer_1 : Sidebar does not exist in theme (moving widget to Inactive)
+
+Text - About Us - Imported to Inactive
+
+music_artist_footer_2 : Sidebar does not exist in theme (moving widget to Inactive)
+
+Calendar - Calendar - Imported to Inactive
+
+music_artist_footer_3 : Sidebar does not exist in theme (moving widget to Inactive)
+
+Gallery - Gallery - Imported to Inactive
+
+
+
+---Importing customizer settings---
+Error: The customizer import file is not suitable for current theme. You can only import customizer settings for the same theme or a child theme.
+
+---ocdi/after_import---
+

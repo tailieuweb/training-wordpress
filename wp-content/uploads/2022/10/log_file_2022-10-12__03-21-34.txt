@@ -1,0 +1,48 @@
+
+---Downloaded files---
+The import files for: Espy Jobs were successfully downloaded!
+Initial max execution time = 120
+Files info:
+Site URL = http://wordpress.local
+Data file = D:\5-research\1-gh\1-tailieuweb\wordpress\2-source/wp-content/uploads/2022/10/demo-content-import-file_2022-10-12__03-21-34.xml
+Widget file = D:\5-research\1-gh\1-tailieuweb\wordpress\2-source/wp-content/uploads/2022/10/demo-widgets-import-file_2022-10-12__03-21-34.json
+Customizer file = D:\5-research\1-gh\1-tailieuweb\wordpress\2-source/wp-content/uploads/2022/10/demo-customizer-import-file_2022-10-12__03-21-34.dat
+Redux files:
+not defined!
+
+------
+New AJAX call!
+[WARNING] Failed to import job_listing_category Design
+[WARNING] Failed to import job_listing_category Development
+[WARNING] Failed to import job_listing_category Marketify
+[WARNING] Failed to import job_listing_category Sales
+
+
+------
+New AJAX call!
+[WARNING] Failed to import job_listing_category Design
+[WARNING] Failed to import job_listing_category Development
+[WARNING] Failed to import job_listing_category Marketify
+[WARNING] Failed to import job_listing_category Sales
+
+
+---Importing widgets---
+espyjobs_footer_1 : Sidebar does not exist in theme (moving widget to Inactive)
+
+Text - Espy Jobs - Imported to Inactive
+
+espyjobs_footer_2 : Sidebar does not exist in theme (moving widget to Inactive)
+
+Pages - Site Map - Imported to Inactive
+
+espyjobs_footer_3 : Sidebar does not exist in theme (moving widget to Inactive)
+
+Recent Posts - Recent News Articles - Imported to Inactive
+
+
+
+---Importing customizer settings---
+Error: The customizer import file is not suitable for current theme. You can only import customizer settings for the same theme or a child theme.
+
+---ocdi/after_import---
+
