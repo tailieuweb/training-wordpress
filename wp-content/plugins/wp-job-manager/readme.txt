@@ -4,7 +4,7 @@ Tags: job manager, job listing, job board, job management, job lists, job list, 
 Requires at least: 5.8
 Tested up to: 6.0
 Requires PHP: 7.2
-Stable tag: 1.38.0
+Stable tag: 1.38.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -152,6 +152,12 @@ It then creates a database based on the parameters passed to it.
 6. Job listings in admin.
 
 == Changelog ==
+
+= 1.38.1 =
+* Enhancement: Added support for WordPress.com marketplace
+* Change: Only perform application field validation when required or not empty (@tripflex)
+* Fix: Deprecated error in `the_company_twitter()` (@MPolleke)
+* Fix: Using WP Job Manager functions before they're fully loaded.
 
 = 1.38.0 =
 * Enhancement: Add remote position to filtering (@tripflex)
