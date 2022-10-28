@@ -167,7 +167,7 @@ function jobscout_get_testimonial_section_description(){
  * Display blog readmore button
 */
 function jobscout_get_read_more(){
-    $read_more_text = get_theme_mod( 'read_more_text', __( 'Read More', 'jobscout' ) ); 
+    $read_more_text = get_theme_mod( 'read_more_text', __( 'Read More', 'jobscout' ) );
 
     if( $read_more_text ){
         return esc_html( $read_more_text );

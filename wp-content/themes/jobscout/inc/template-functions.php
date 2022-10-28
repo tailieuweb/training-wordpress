@@ -19,7 +19,7 @@ add_action( 'jobscout_doctype', 'jobscout_doctype' );
 
 if( ! function_exists( 'jobscout_head' ) ) :
 /**
- * Before wp_head 
+ * Before wp_head
 */
 function jobscout_head(){ ?>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -34,7 +34,7 @@ if( ! function_exists( 'jobscout_responsive_header' ) ) :
 /**
  * Responsive Header
 */
-function jobscout_responsive_header(){ 
+function jobscout_responsive_header(){
     $post_job_label  = get_theme_mod( 'post_job_label', __( 'Post Jobs', 'jobscout' ) );
     $post_job_url    = get_theme_mod( 'post_job_url', '#' );
     ?>
@@ -44,7 +44,7 @@ function jobscout_responsive_header(){
         </div>
 
 
-        <nav id="mobile-site-navigation" class="main-navigation mobile-navigation">        
+        <nav id="mobile-site-navigation" class="main-navigation mobile-navigation">
             <div class="primary-menu-list main-menu-modal cover-modal" data-modal-target-string=".main-menu-modal">
                 <button class="close close-main-nav-toggle" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".main-menu-modal"></button>
                 <div class="mobile-menu" aria-label="<?php esc_attr_e( 'Mobile', 'jobscout' ); ?>">
@@ -65,7 +65,7 @@ function jobscout_responsive_header(){
                             'fallback_cb'    => 'jobscout_secondary_menu_fallback',
                         ) );
                     ?>
-                
+
                     <?php if( $post_job_label || $post_job_url ){ ?>
                         <div class="btn-wrap">
                             <a class="btn" href="<?php echo esc_url( $post_job_url ) ?>"><?php echo esc_html( $post_job_label ) ?></a>
@@ -96,13 +96,13 @@ if( ! function_exists( 'jobscout_header' ) ) :
 /**
  * Header Start
 */
-function jobscout_header(){ 
+function jobscout_header(){
     ?>
     <header id="masthead" class="site-header header-one" itemscope itemtype="https://schema.org/WPHeader">
         <?php if( has_nav_menu( 'secondary' ) || current_user_can( 'manage_options' ) ) jobscout_secondary_navigation(); ?>
         <div class="header-main">
             <div class="container">
-                <?php 
+                <?php
                     jobscout_site_branding( false );
                     echo '<div class="menu-wrap">';
                     jobscout_primary_nagivation();
@@ -128,9 +128,9 @@ if( ! function_exists( 'jobscout_breadcrumbs_bar' ) ) :
                 <div class="container">
                     <?php jobscout_breadcrumbs_cb(); //Breadcrumb ?>
                 </div>
-            </section>   
-            <?php 
-        }    
+            </section>
+            <?php
+        }
     }
 endif;
 add_action( 'jobscout_after_header', 'jobscout_breadcrumbs_bar', 30 );
@@ -138,36 +138,36 @@ add_action( 'jobscout_after_header', 'jobscout_breadcrumbs_bar', 30 );
 if( ! function_exists( 'jobscout_content_start' ) ) :
 /**
  * Content Start
- *  
+ *
 */
-function jobscout_content_start(){       
+function jobscout_content_start(){
     echo '<div id="acc-content"><!-- .site-header -->';
-    $home_sections = jobscout_get_home_sections(); 
+    $home_sections = jobscout_get_home_sections();
     if( ! ( is_front_page() && ! is_home() && $home_sections ) ){ //Make necessary adjust for pg template.
-        echo is_404() ? '<div class="error-holder">' : '<div id="content" class="site-content">'; 
+        echo is_404() ? '<div class="error-holder">' : '<div id="content" class="site-content">';
 
         if( is_archive() || is_search() || is_page_template( 'templates/portfolio.php' ) ) : ?>
             <header class="page-header">
                 <?php
-                    if( is_archive() ){ 
-                        if( is_author() ) { 
+                    if( is_archive() ){
+                        if( is_author() ) {
                             $author_title = get_the_author(); ?>
                             <div class="author-bio">
                                 <figure class="author-img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?></figure>
                                 <div class="author-content">
-                                    <?php 
+                                    <?php
                                         echo '<span class="sub-title">' . esc_html__( 'All Posts by', 'jobscout' ) . '</span>';
                                         if( $author_title ) echo '<h1 class="author-title">' . esc_html( $author_title ) . '</h3>';
-                                    ?>      
+                                    ?>
                                 </div>
                             </div>
                         <?php }else{
                             the_archive_title( '<h1 class="page-title">', '</h1>' );
-                            the_archive_description( '<div class="archive-description">', '</div>' );             
+                            the_archive_description( '<div class="archive-description">', '</div>' );
                         }
                     }
-                    
-                    if( is_search() ){ 
+
+                    if( is_search() ){
                         echo '<div class="container">';
                             echo '<h1 class="page-title">' . esc_html__( 'Search', 'jobscout' ) . '</h1>';
                             get_search_form();
@@ -187,7 +187,7 @@ function jobscout_content_start(){
                     }
                 ?>
             </header>
-        <?php endif; 
+        <?php endif;
             if( is_singular( 'job_listing' ) ){
                 global $post;
                 $banner_image   = get_header_image();
@@ -197,10 +197,10 @@ function jobscout_content_start(){
                     $banner_style = 'background-image: url(' . esc_url( $banner_image ) . '); background-size: cover;';
                     echo '<header class="entry-header" style="'. esc_attr( $banner_style ) .'"></header>';
                 }
-            } 
+            }
         ?>
         <div class="container">
-        <?php 
+        <?php
     }
 }
 endif;
@@ -217,18 +217,18 @@ function jobscout_post_thumbnail() {
     $image_size  = 'thumbnail';
     $ed_featured = get_theme_mod( 'ed_featured_image', true );
     $sidebar     = jobscout_sidebar_layout();
-    
-    if( is_home() || is_archive() || is_search() ){        
-        $image_size = 'jobscout-blog';    
-        if( has_post_thumbnail() ){                        
+
+    if( is_home() || is_archive() || is_search() ){
+        $image_size = 'jobscout-blog';
+        if( has_post_thumbnail() ){
             echo '<figure class="post-thumbnail"><a href="' . esc_url( get_permalink() ) . '">';
-                the_post_thumbnail( $image_size, array( 'itemprop' => 'image' ) );    
+                the_post_thumbnail( $image_size, array( 'itemprop' => 'image' ) );
             echo '</a></figure>';
         }else{
             echo '<figure class="post-thumbnail">';
-                jobscout_fallback_svg_image( $image_size );  
-            echo '</figure>';  
-        }        
+                jobscout_fallback_svg_image( $image_size );
+            echo '</figure>';
+        }
     }elseif( is_singular() ){
         $image_size = ( $sidebar ) ? 'jobscout-single' : 'jobscout-single-fullwidth';
         if( is_single() ){
@@ -255,7 +255,7 @@ if( ! function_exists( 'jobscout_entry_header' ) ) :
 */
 function jobscout_entry_header(){ ?>
     <header class="entry-header">
-        <?php 
+        <?php
             $ed_cat_single = get_theme_mod( 'ed_category', false );
             $hide_author   = get_theme_mod( 'ed_post_author', false );
             $hide_date     = get_theme_mod( 'ed_post_date', false );
@@ -275,10 +275,10 @@ function jobscout_entry_header(){ ?>
                 the_title( '<h1 class="entry-title">', '</h1>' );
             else :
                 the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-            endif;        
+            endif;
         ?>
-    </header>         
-    <?php    
+    </header>
+    <?php
 }
 endif;
 add_action( 'jobscout_post_entry_content', 'jobscout_entry_header', 10 );
@@ -289,12 +289,12 @@ if( ! function_exists( 'jobscout_entry_content' ) ) :
 /**
  * Entry Content
 */
-function jobscout_entry_content(){ 
+function jobscout_entry_content(){
     $ed_excerpt = get_theme_mod( 'ed_excerpt', true ); ?>
     <div class="entry-content" itemprop="text">
 		<?php
 			if( is_singular() || ! $ed_excerpt || ( get_post_format() != false ) ){
-                the_content();    
+                the_content();
     			wp_link_pages( array(
     				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jobscout' ),
     				'after'  => '</div>',
@@ -317,7 +317,7 @@ if( ! function_exists( 'jobscout_entry_footer' ) ) :
 /**
  * Entry Footer
 */
-function jobscout_entry_footer(){ 
+function jobscout_entry_footer(){
     $readmore = get_theme_mod( 'read_more_text', __( 'Read More', 'jobscout' ) );
     $ed_post_date   = get_theme_mod( 'ed_post_date', false ); ?>
 	<footer class="entry-footer">
@@ -325,9 +325,9 @@ function jobscout_entry_footer(){
 			if( is_single() ){
 			    jobscout_tag();
 			}
-            
+
             if( is_front_page() || is_home() || is_search() || is_archive() ){
-                echo '<a href="' . esc_url( get_the_permalink() ) . '" class="readmore-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.207 8.58"><defs><style>.c{fill:none;stroke:#2ace5e;}</style></defs><g transform="translate(-701.5 -958.173)"><path class="c" d="M-9326.909-9204.917l-3.937,3.937,3.937,3.937" transform="translate(-8613.846 -8238.518) rotate(180)"/><line class="c" x2="15.154" transform="translate(701.5 962.426)"/></g></svg>' . esc_html( $readmore ) . '</a>';    
+                echo '<a href="' . esc_url( get_the_permalink() ) . '" class="readmore-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.207 8.58"><defs><style>.c{fill:none;stroke:#2ace5e;}</style></defs><g transform="translate(-701.5 -958.173)"><path class="c" d="M-9326.909-9204.917l-3.937,3.937,3.937,3.937" transform="translate(-8613.846 -8238.518) rotate(180)"/><line class="c" x2="15.154" transform="translate(701.5 962.426)"/></g></svg>' . esc_html( $readmore ) . '</a>';
             }
 
             if( is_single() ) echo '<div class="entry-footer-right">';
@@ -335,7 +335,7 @@ function jobscout_entry_footer(){
                 if( ! $ed_post_date ) jobscout_posted_on( true );
                 jobscout_comment_count();
             }
-            
+
             if( get_edit_post_link() ){
                 edit_post_link(
                     sprintf(
@@ -357,7 +357,7 @@ function jobscout_entry_footer(){
             if( is_single() ) echo '</div>';
 		?>
 	</footer><!-- .entry-footer -->
-	<?php 
+	<?php
 }
 endif;
 add_action( 'jobscout_post_entry_content', 'jobscout_entry_footer', 20 );
@@ -366,21 +366,21 @@ add_action( 'jobscout_single_post_entry_content', 'jobscout_entry_footer', 20 );
 
 if( ! function_exists( 'jobscout_get_single_job_title' ) ) :
 /**
- * Before wp_head 
+ * Before wp_head
 */
-function jobscout_get_single_job_title(){ 
+function jobscout_get_single_job_title(){
     ?>
     <header class="entry-header">
         <h1 class="entry-title"><?php the_title(); ?></h1>
         <?php
-            if ( get_option( 'job_manager_enable_types' ) ) { 
+            if ( get_option( 'job_manager_enable_types' ) ) {
                 echo '<div class="job-type">';
-                    $types = wpjm_get_the_job_types(); 
+                    $types = wpjm_get_the_job_types();
                     if ( ! empty( $types ) ) : foreach ( $types as $type ) : ?>
                         <span class="btn <?php echo esc_attr( sanitize_title( $type->slug ) ); ?>"><?php echo esc_html( $type->name ); ?></span>
                     <?php endforeach; endif;
                 echo '</div>';
-            } 
+            }
         ?>
     </header>
     <?php
@@ -401,16 +401,16 @@ function jobscout_navigation(){
     		'',
     		'category'
     	);
-    
+
     	$next = get_next_post_link(
     		'<div class="nav-next nav-holder">%link</div>',
     		'<span class="meta-nav">' . esc_html__( 'Next Article', 'jobscout' ) . '</span><span class="post-title">%title</span>',
     		false,
     		'',
     		'category'
-    	); 
-        
-        if( $previous || $next ){?>            
+    	);
+
+        if( $previous || $next ){?>
             <nav class="navigation post-navigation" role="navigation">
     			<h2 class="screen-reader-text"><?php esc_html_e( 'Post Navigation', 'jobscout' ); ?></h2>
     			<div class="nav-links">
@@ -419,7 +419,7 @@ function jobscout_navigation(){
                         if( $next ) echo $next;
                     ?>
     			</div>
-    		</nav>        
+    		</nav>
             <?php
         }
     }else{
@@ -434,7 +434,7 @@ if( ! function_exists( 'jobscout_author' ) ) :
 /**
  * Author Section
 */
-function jobscout_author(){ 
+function jobscout_author(){
     $ed_author    = get_theme_mod( 'ed_author', false );
     $author_title = get_theme_mod( 'author_title', __( 'About Author', 'jobscout' ) );
     if( ! $ed_author && get_the_author_meta( 'description' ) ){ ?>
@@ -444,7 +444,7 @@ function jobscout_author(){
             <figure class="author-img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?></figure>
             <div class="author-content">
                 <?php echo '<div class="author-info">' . wpautop( wp_kses_post( get_the_author_meta( 'description' ) ) ) . '</div>';
-                ?>		
+                ?>
             </div>
 		</div>
 	</div>
@@ -456,7 +456,7 @@ add_action( 'jobscout_after_post_content', 'jobscout_author', 20 );
 
 if( ! function_exists( 'jobscout_comment' ) ) :
 /**
- * Comments Template 
+ * Comments Template
 */
 function jobscout_comment(){
     // If comments are open or we have at least one comment, load up the comment template.
@@ -472,10 +472,10 @@ if( ! function_exists( 'jobscout_content_end' ) ) :
 /**
  * Content End
 */
-function jobscout_content_end(){ 
-    $home_sections = jobscout_get_home_sections(); 
-    if( ! ( is_front_page() && ! is_home() && $home_sections ) ){ ?>            
-        </div><!-- .container/ -->        
+function jobscout_content_end(){
+    $home_sections = jobscout_get_home_sections();
+    if( ! ( is_front_page() && ! is_home() && $home_sections ) ){ ?>
+        </div><!-- .container/ -->
     </div><!-- .error-holder/site-content -->
     <?php
     }
@@ -499,31 +499,31 @@ if( ! function_exists( 'jobscout_footer_top' ) ) :
 /**
  * Footer Top
 */
-function jobscout_footer_top(){    
+function jobscout_footer_top(){
     $footer_sidebars = array( 'footer-one', 'footer-two', 'footer-three', 'footer-four' );
     $active_sidebars = array();
     $sidebar_count   = 0;
-    
+
     foreach ( $footer_sidebars as $sidebar ) {
         if( is_active_sidebar( $sidebar ) ){
             array_push( $active_sidebars, $sidebar );
             $sidebar_count++ ;
         }
     }
-                 
+
     if( $active_sidebars ){ ?>
         <div class="footer-t">
     		<div class="container">
     			<div class="grid column-<?php echo esc_attr( $sidebar_count ); ?>">
                 <?php foreach( $active_sidebars as $active ){ ?>
     				<div class="col">
-    				   <?php dynamic_sidebar( $active ); ?>	
+    				   <?php dynamic_sidebar( $active ); ?>
     				</div>
                 <?php } ?>
                 </div>
     		</div>
     	</div>
-        <?php 
+        <?php
     }
 }
 endif;
@@ -536,15 +536,15 @@ if( ! function_exists( 'jobscout_footer_bottom' ) ) :
 function jobscout_footer_bottom(){ ?>
     <div class="footer-b">
 		<div class="container">
-            <?php 
+            <?php
                 if ( function_exists( 'the_privacy_policy_link' )  )  the_privacy_policy_link( '<div class="privacy-block">', '</div>' );
             ?>
-			<div class="copyright">            
+			<div class="copyright">
             <?php
                 jobscout_get_footer_copyright();
                 jobscout_ed_author_link();
                 jobscout_ed_wp_link();
-            ?>               
+            ?>
             </div>
 		</div>
 	</div>
@@ -555,7 +555,7 @@ add_action( 'jobscout_footer', 'jobscout_footer_bottom', 40 );
 
 if( ! function_exists( 'jobscout_footer_end' ) ) :
 /**
- * Footer End 
+ * Footer End
 */
 function jobscout_footer_end(){ ?>
     </footer><!-- #colophon -->

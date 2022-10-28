@@ -15,14 +15,14 @@
 get_header(); ?>
 
 	<div id="primary" class="content-area">
-		
-        <?php 
+
+        <?php
         /**
          * Before Posts hook
         */
         do_action( 'jobscout_before_posts_content' );
         ?>
-        
+
         <main id="main" class="site-main">
 
 		<?php
@@ -47,7 +47,7 @@ get_header(); ?>
 		endif; ?>
 
 		</main><!-- #main -->
-        
+
         <?php
         /**
          * After Posts hook
@@ -55,7 +55,7 @@ get_header(); ?>
         */
         do_action( 'jobscout_after_posts_content' );
         ?>
-        
+
 	</div><!-- #primary -->
 
 <?php
