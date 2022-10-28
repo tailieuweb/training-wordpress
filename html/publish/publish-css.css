@@ -1,3 +1,28 @@
+button, 
+input[type="button"], 
+input[type="reset"], 
+input[type="submit"],
+a.btn {
+    background: #EA751E;
+    border: 1px solid #EA751E;
+}
+
+button:hover, 
+input[type="button"]:hover, 
+input[type="reset"]:hover, 
+input[type="submit"]:hover,
+a.btn:hover, a.btn:focus {
+    color: #EA751E;
+}
+
+.btn-secondary {
+    border-color: #fff !important;
+}
+
+.container-fluid {
+    max-width: 100%;
+}
+
 #page {
  background: #F2F2F2;
 }
@@ -6,8 +31,9 @@
     padding: 22px 0;
 }
 
+input,
 .btn-wrap a.btn {
-    border-radius: 0;
+    border-radius: 0 !important;
 }
 
 .banner-caption-custom .jobscout_job_filters .search_jobs,
@@ -48,12 +74,14 @@
 
 .main-navigation ul li a {
     padding: 10px;
+    text-transform: uppercase;
 }
 
 .main-navigation ul li:hover > a, 
 .main-navigation ul li.current-menu-item>a, 
 .main-navigation ul li.current_page_item>a {
-    border-bottom: 2px solid #2ace5e;
+    border-bottom: 2px solid #EA751E;
+    color: #000;
 }
 
 .bg-cta-section-custom .raratheme-cta-container {
@@ -170,6 +198,47 @@ footer .footer-t .textwidget ul li a {
     border-radius: 60px;
 }
 
+footer .footer-t .subcribe-custom { 
+   background-color: #EA751E;
+   padding: 30px 0;
+   margin-bottom: 80px;
+}
+
+footer .footer-t .subcribe-custom > .widget { 
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+footer .footer-t .subcribe-custom .newsletter {
+    display: flex;
+    max-width: 90%;
+    margin: 0 auto;
+    align-items: center;
+    color: #FFF;    
+    position: relative;
+}
+
+footer .footer-t .subcribe-custom .newsletter .btn-secondary {
+    margin-left: auto;
+}
+
+footer .footer-t .subcribe-custom .newsletter .newsletter-info {
+    display: flex;
+    width: 100%;
+    padding-right: 20px;
+    align-items: center;
+}
+
+footer .footer-t .subcribe-custom .newsletter .newsletter-input {
+    width: 100%;
+}
+
+footer .footer-t .subcribe-custom .newsletter .btn-secondary + span {
+    position: absolute;
+    right: -40px;
+    margin: 0;
+}
+
 @media (max-width: 992px) {
     .article-section-custom .article-wrap article .post-thumbnail {
         width: 120px;
@@ -177,6 +246,28 @@ footer .footer-t .textwidget ul li a {
 }
 
 @media (max-width: 767px) {
+    footer .footer-t .subcribe-custom .newsletter,
+    footer .footer-t .subcribe-custom .newsletter .newsletter-info  {
+        flex-direction: column;
+    }
+
+    footer .footer-t .subcribe-custom .newsletter .newsletter-info {
+        padding: 0 0 20px 0;
+        font-size: 22px;
+    }
+
+    footer .footer-t .subcribe-custom .newsletter .newsletter-input {
+        padding-top: 20px;
+    }
+
+    footer .footer-t .subcribe-custom .newsletter .btn-secondary {
+        width: 100%;
+    }
+
+    footer .footer-t .subcribe-custom .newsletter .btn-secondary + span {
+        right: 0;
+    }
+
     .banner-caption-custom .form-wrap {
         padding: 0;
         background-color: transparent;
