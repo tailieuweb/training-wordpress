@@ -13,12 +13,12 @@ function jobscout_posted_on( $single = false ) {
 	$ed_updated_post_date = get_theme_mod( 'ed_post_update_date', true );
     if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		if( $ed_updated_post_date ){
-            $time_string = '<time class="entry-date published updated" datetime="%3$s" itemprop="dateModified">%4$s</time><time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time>';		  
+            $time_string = '<time class="entry-date published updated" datetime="%3$s" itemprop="dateModified">%4$s</time><time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time>';
 		}else{
-            $time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';  
-		}        
+            $time_string = '<time class="entry-date published" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';
+		}
 	}else{
-	   $time_string = '<time class="entry-date published updated" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';   
+	   $time_string = '<time class="entry-date published updated" datetime="%1$s" itemprop="datePublished">%2$s</time><time class="updated" datetime="%3$s" itemprop="dateModified">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -32,9 +32,9 @@ function jobscout_posted_on( $single = false ) {
     if( $single ){
         $time_svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><defs><style>.ca{opacity:0.6;}</style></defs><path class="ca" d="M14.6,1.5H12.461V.5a.5.5,0,1,0-1,0v1H8.474V.5a.5.5,0,1,0-1,0v1H4.486V.5a.472.472,0,0,0-.5-.5.472.472,0,0,0-.5.5v1H1.346A1.342,1.342,0,0,0,0,2.85V14.7A1.332,1.332,0,0,0,1.346,16H14.654A1.342,1.342,0,0,0,16,14.65V2.85A1.419,1.419,0,0,0,14.6,1.5Zm.349,13.15A.341.341,0,0,1,14.6,15H1.346A.341.341,0,0,1,1,14.65V2.85a.341.341,0,0,1,.349-.35H3.489v1a.472.472,0,0,0,.5.5.472.472,0,0,0,.5-.5v-1H7.477v1a.5.5,0,1,0,1,0v-1h2.991v1a.5.5,0,1,0,1,0v-1H14.6a.341.341,0,0,1,.349.35ZM3.489,6H5.483V7.5H3.489Zm0,2.5H5.483V10H3.489Zm0,2.5H5.483v1.5H3.489Zm3.489,0H8.972v1.5H6.978Zm0-2.5H8.972V10H6.978Zm0-2.5H8.972V7.5H6.978Zm3.489,5h1.994v1.5H10.467Zm0-2.5h1.994V10H10.467Zm0-2.5h1.994V7.5H10.467Z"/></svg>';
     }
-    
+
     $posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">'. $time_svg .'<time class="updated published">' . $time_string . '</time></a>';
-	
+
 	echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
 }
@@ -45,7 +45,7 @@ if ( ! function_exists( 'jobscout_posted_by' ) ) :
  * Prints HTML with meta information for the current author.
  */
 function jobscout_posted_by() {
-	$byline = sprintf( '<span itemprop="name"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" itemprop="url">' . esc_html( get_the_author() ) . '</a></span>' 
+	$byline = sprintf( '<span itemprop="name"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" itemprop="url">' . esc_html( get_the_author() ) . '</a></span>'
     );
 	echo '<span class="byline" itemprop="author" itemscope itemtype="https://schema.org/Person">' . $byline . '</span>';
 }
@@ -73,7 +73,7 @@ function jobscout_comment_count(){
 			)
 		);
 		echo '</span>';
-	}    
+	}
 }
 endif;
 
@@ -116,22 +116,22 @@ if( ! function_exists( 'jobscout_site_branding' ) ) :
 /**
  * Site Branding
 */
-function jobscout_site_branding( $responsive = false ){ 
+function jobscout_site_branding( $responsive = false ){
     $site_title          = get_bloginfo( 'name', 'display' );
     $description         = get_bloginfo( 'description', 'display' );
     if( ( function_exists( 'has_custom_logo' ) && has_custom_logo() ) && ( ! empty( $site_title ) || ! empty(  $description  ) ) ){
-       $branding_class = ' logo-text';                                                                                                                          
+       $branding_class = ' logo-text';
     } else {
         $branding_class = '';
     }
     ?>
     <div class="site-branding<?php echo esc_attr( $branding_class ); ?>" itemscope itemtype="https://schema.org/Organization"> <!-- logo-text -->
-        <?php 
+        <?php
             if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
                 echo '<div class="site-logo">';
                 the_custom_logo();
                 echo '</div>';
-            } 
+            }
 
             echo '<div class="site-title-wrap">';
             if( $responsive ){ ?>
@@ -139,7 +139,7 @@ function jobscout_site_branding( $responsive = false ){
             <?php }else{
                 if( is_front_page() ){ ?>
                     <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></h1>
-                    <?php 
+                    <?php
                 }else{ ?>
                     <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
                 <?php
@@ -163,7 +163,7 @@ if( ! function_exists( 'jobscout_primary_nagivation' ) ) :
 /**
  * Primary Navigation.
 */
-function jobscout_primary_nagivation(){ 
+function jobscout_primary_nagivation(){
 
     $post_job_label  = get_theme_mod( 'post_job_label', __( 'Post Jobs', 'jobscout' ) );
     $post_job_url    = get_theme_mod( 'post_job_url', '#' );
@@ -188,9 +188,9 @@ function jobscout_primary_nagivation(){
             <div class="btn-wrap">
                 <a class="btn" href="<?php echo esc_url( $post_job_url ) ?>"><?php echo esc_html( $post_job_label ) ?></a>
             </div>
-        <?php } 
-  
-    
+        <?php }
+
+
 }
 endif;
 
@@ -212,22 +212,7 @@ if( ! function_exists( 'jobscout_secondary_navigation' ) ) :
  * Secondary Navigation
 */
 function jobscout_secondary_navigation(){ ?>
-    <div class="header-t">
-        <div class="container">
-            <div class="left-block">
-	            <nav class="secondary-nav">
-            		<?php
-            			wp_nav_menu( array(
-            				'theme_location' => 'secondary',
-                            'menu_class'     => 'nav-menu',
-            				'menu_id'        => 'secondary-menu',
-                            'fallback_cb'    => 'jobscout_secondary_menu_fallback',
-            			) );
-            		?>
-	            </nav>
-            </div>
-        </div>
-    </div><!-- .header-t -->
+
     <?php
 }
 endif;
@@ -248,8 +233,8 @@ endif;
 if( ! function_exists( 'jobscout_theme_comment' ) ) :
 /**
  * Callback function for Comment List *
- * 
- * @link https://codex.wordpress.org/Function_Reference/wp_list_comments 
+ *
+ * @link https://codex.wordpress.org/Function_Reference/wp_list_comments
  */
 function jobscout_theme_comment( $comment, $args, $depth ){
 	if ( 'div' == $args['style'] ) {
@@ -261,11 +246,11 @@ function jobscout_theme_comment( $comment, $args, $depth ){
 	}
 ?>
 	<<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
-	
+
     <?php if ( 'div' != $args['style'] ) : ?>
     <article id="div-comment-<?php comment_ID() ?>" class="comment-body" itemscope itemtype="https://schema.org/UserComments">
 	<?php endif; ?>
-    	
+
         <footer class="comment-meta">
             <div class="comment-author vcard">
         	   <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
@@ -281,14 +266,14 @@ function jobscout_theme_comment( $comment, $args, $depth ){
         		<br />
         	<?php endif; ?>
         </footer>
-        <div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>        
+        <div class="comment-content" itemprop="commentText"><?php comment_text(); ?></div>
         <div class="reply">
             <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-        </div>       
+        </div>
 	<?php if ( 'div' != $args['style'] ) : ?>
     </article><!-- .comment-body -->
 	<?php endif; ?>
-    
+
 <?php
 }
 endif;
@@ -309,7 +294,7 @@ function jobscout_sidebar_layout( $class = false ){
     $blogpage_id    = get_option( 'page_for_posts' );
     $frontpage_id   = get_option( 'page_on_front' );
     $home_sections  = jobscout_get_home_sections();
-    
+
     if( is_front_page() && ! is_home() ){
         if( $home_sections ){
             $return = $class ? '' : false;
@@ -342,7 +327,7 @@ function jobscout_sidebar_layout( $class = false ){
                 $return = $class ? 'full-width' : false;
             }
 
-        }elseif( is_active_sidebar( 'sidebar' ) ){            
+        }elseif( is_active_sidebar( 'sidebar' ) ){
             if( $general_layout == 'right-sidebar' ){
                 $return = $class ? 'rightsidebar' : 'sidebar';
             }elseif( $general_layout == 'left-sidebar' ){
@@ -352,11 +337,11 @@ function jobscout_sidebar_layout( $class = false ){
             }
         }else{
             $return = $class ? 'full-width' : false;
-        }        
-    }elseif( is_singular( array( 'page', 'post','job_listing' ) ) ){   
+        }
+    }elseif( is_singular( array( 'page', 'post','job_listing' ) ) ){
         $sidebar_layout = get_post_meta( $post->ID, '_jobscout_sidebar_layout', true );
         $sidebar_layout = ! empty( $sidebar_layout ) ? $sidebar_layout : 'default-sidebar';
-        
+
         if( is_page() ){
             if( is_active_sidebar( 'sidebar' ) ){
                 if( $sidebar_layout == 'no-sidebar' ){
@@ -391,40 +376,40 @@ function jobscout_sidebar_layout( $class = false ){
     }elseif( is_tax( 'rara_portfolio_categories' ) ){
         if( is_active_sidebar( 'sidebar' ) ){
             if( 'right-sidebar' == $general_layout ){
-                $return = $class ? 'rightsidebar' : 'sidebar'; 
+                $return = $class ? 'rightsidebar' : 'sidebar';
             }elseif( 'left-sidebar' == $general_layout ){
-                $return = $class ? 'leftsidebar' : 'sidebar'; 
+                $return = $class ? 'leftsidebar' : 'sidebar';
             }else{
                 $return = $class ? 'full-width' : false; //Fullwidth
             }
         }else{
             $return = $class ? 'full-width' : false; //Fullwidth
-        }                                                       
+        }
     }elseif( is_singular( 'rara-portfolio' ) ){
         $return = $class ? 'full-width' : false;
     }elseif( jobscout_is_woocommerce_activated() && is_post_type_archive( 'product' ) ){
-        if( is_active_sidebar( 'shop-sidebar' ) ){            
-            $return = $class ? 'rightsidebar' : 'sidebar';             
+        if( is_active_sidebar( 'shop-sidebar' ) ){
+            $return = $class ? 'rightsidebar' : 'sidebar';
         }else{
             $return = $class ? 'full-width' : false;
-        } 
+        }
     }elseif( is_404() ){
         $return = $class ? 'full-width' : false;
     }else{
         if( is_active_sidebar( 'sidebar' ) ){
             if( 'right-sidebar' == $general_layout ){
-                $return = $class ? 'rightsidebar' : 'sidebar'; 
+                $return = $class ? 'rightsidebar' : 'sidebar';
             }elseif( 'left-sidebar' == $general_layout ){
-                $return = $class ? 'leftsidebar' : 'sidebar'; 
+                $return = $class ? 'leftsidebar' : 'sidebar';
             }else{
                 $return = $class ? 'full-width' : false; //Fullwidth
             }
         }else{
             $return = $class ? 'full-width' : false; //Fullwidth
-        }         
+        }
     }
 
-    return $return; 
+    return $return;
 }
 endif;
 
@@ -475,7 +460,7 @@ function jobscout_load_preload_local_fonts( $url, $format = 'woff2' ) {
         foreach ( $local_font_files as $key => $local_font ) {
             if ( $local_font ) {
                 echo '<link rel="preload" href="' . esc_url( $local_font ) . '" as="font" type="font/' . esc_attr( $font_format ) . '" crossorigin>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-            }	
+            }
         }
         return;
     }
@@ -486,7 +471,7 @@ function jobscout_load_preload_local_fonts( $url, $format = 'woff2' ) {
     $font->preload_local_fonts();
 }
 endif;
-    
+
 if( ! function_exists( 'jobscout_flush_local_google_fonts' ) ){
     /**
      * Ajax Callback for flushing the local font
@@ -503,32 +488,32 @@ add_action( 'wp_ajax_nopriv_flush_local_google_fonts', 'jobscout_flush_local_goo
 
 if( ! function_exists( 'jobscout_get_home_sections' ) ) :
 /**
- * Returns Home Sections 
+ * Returns Home Sections
 */
 function jobscout_get_home_sections(){
-    
+
     $ed_banner = get_theme_mod( 'ed_banner_section', true );
-    $sections = array( 
+    $sections = array(
         'jobposting'  => array( 'section' => 'jobposting' ),
         'cta'         => array( 'sidebar' => 'cta' ),
-        'blog'        => array( 'section' => 'blog' ), 
+        'blog'        => array( 'section' => 'blog' ),
         'testimonial' => array( 'sidebar' => 'testimonial' ),
         'client'      => array( 'sidebar' => 'client' ),
     );
-    
+
     $enabled_section = array();
     if( $ed_banner ) array_push( $enabled_section, 'banner' );
-    
+
     foreach( $sections as $k => $v ){
         if( array_key_exists( 'sidebar', $v ) ){
             if( is_active_sidebar( $v['sidebar'] ) ) array_push( $enabled_section, $v['sidebar'] );
         }else{
             if( get_theme_mod( 'ed_' . $v['section'] . '_section', true ) ) array_push( $enabled_section, $v['section'] );
         }
-    }  
+    }
     return apply_filters( 'jobscout_home_sections', $enabled_section );
 }
-endif;        
+endif;
 
 if( ! function_exists( 'jobscout_escape_text_tags' ) ) :
 /**
@@ -577,7 +562,7 @@ function jobscout_is_jetpack_activated( $gallery = false ){
         return ( class_exists( 'jetpack' ) && Jetpack::is_module_active( 'tiled-gallery' ) ) ? true : false;
 	}else{
         return class_exists( 'jetpack' ) ? true : false;
-    }           
+    }
 }
 
 /**
@@ -606,7 +591,7 @@ function jobscout_posts_per_page_count(){
             $start_post_number = 0;
             $end_post_number   = 0;
 
-            if( $wp_query->found_posts > 0 && !( jobscout_is_woocommerce_activated() && is_shop() ) ):                
+            if( $wp_query->found_posts > 0 && !( jobscout_is_woocommerce_activated() && is_shop() ) ):
                 $start_post_number = 1;
                 if( $wp_query->found_posts < $posts_per_page  ) {
                     $end_post_number = $wp_query->found_posts;
@@ -683,29 +668,29 @@ if( ! function_exists( 'jobscout_breadcrumbs_cb' ) ) :
 /**
  * breadcrumbs
 */
-function jobscout_breadcrumbs_cb(){ 
+function jobscout_breadcrumbs_cb(){
     global $post;
     $post_page  = get_option( 'page_for_posts' ); //The ID of the page that displays posts.
-    $show_front = get_option( 'show_on_front' ); //What to show on the front page    
+    $show_front = get_option( 'show_on_front' ); //What to show on the front page
     $home       = get_theme_mod( 'breadcrumb_home_text', __( 'Home', 'jobscout' ) ); // text for the 'Home' link
     $delimiter   = get_theme_mod( 'breadcrumb_separator', __( '>', 'jobscout' ) ); // delimiter between crumbs
     $before     = '<span class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">'; // tag before the current crumb
     $after      = '</span>'; // tag after the current crumb
-    
+
     $depth = 1;
     echo '<div id="crumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( home_url() ) . '" itemprop="item"><span itemprop="name">' . esc_html( $home ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
-        
-        if( is_home() ){ 
-            $depth = 2;                       
-            echo $before . '<span itemprop="name">' . esc_html( single_post_title( '', false ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;            
-        }elseif( is_category() ){  
-            $depth = 2;          
-            $thisCat = get_category( get_query_var( 'cat' ), false );            
+
+        if( is_home() ){
+            $depth = 2;
+            echo $before . '<span itemprop="name">' . esc_html( single_post_title( '', false ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;
+        }elseif( is_category() ){
+            $depth = 2;
+            $thisCat = get_category( get_query_var( 'cat' ), false );
             if( $show_front === 'page' && $post_page ){ //If static blog post page is set
                 $p = get_post( $post_page );
                 echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $post_page ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
-                $depth++;  
-            }            
+                $depth++;
+            }
             if( $thisCat->parent != 0 ){
                 $parent_categories = get_category_parents( $thisCat->parent, false, ',' );
                 $parent_categories = explode( ',', $parent_categories );
@@ -719,10 +704,10 @@ function jobscout_breadcrumbs_cb(){
                     }
                 }
             }
-            echo $before . '<span itemprop="name">' .  esc_html( single_cat_title( '', false ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;       
+            echo $before . '<span itemprop="name">' .  esc_html( single_cat_title( '', false ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;
         }elseif( is_tax( 'rara_portfolio_categories' ) ){
             $depth          = 2;
-            //Displaying the portfolio page template in the breadcrumbs 
+            //Displaying the portfolio page template in the breadcrumbs
             $portfolio      = jobscout_get_page_id_by_template( 'templates/portfolio.php' );
             $queried_object = get_queried_object();
             $taxonomy       = 'rara_portfolio_categories';
@@ -743,40 +728,40 @@ function jobscout_breadcrumbs_cb(){
                     }
                 }
             }
-            //Displaying the current viewed term object 
+            //Displaying the current viewed term object
             echo $before . '<span itemprop="name">' . esc_html( $queried_object->name ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
 
-        }elseif( is_tag() ){ 
+        }elseif( is_tag() ){
             $depth          = 2;
             $queried_object = get_queried_object();
             echo $before . '<span itemprop="name">' . esc_html( single_tag_title( '', false ) ) . '</span><meta itemprop="position" content="' . absint( $depth ). '" />'. $after;
-        }elseif( is_author() ){  
+        }elseif( is_author() ){
             global $author;
             $depth    = 2;
             $userdata = get_userdata( $author );
-            echo $before . '<span itemprop="name">' . esc_html( $userdata->display_name ) .'</span><meta itemprop="position" content="' . absint( $depth ) . '" />' . $after;     
-        }elseif( is_day() ){            
+            echo $before . '<span itemprop="name">' . esc_html( $userdata->display_name ) .'</span><meta itemprop="position" content="' . absint( $depth ) . '" />' . $after;
+        }elseif( is_day() ){
             $depth = 2;
             echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'jobscout' ) ) ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'jobscout' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
             $depth++;
             echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_month_link( get_the_time( __( 'Y', 'jobscout' ) ), get_the_time( __( 'm', 'jobscout' ) ) ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( get_the_time( __( 'F', 'jobscout' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
             $depth++;
-            echo $before . '<span itemprop="name">' . esc_html( get_the_time( __( 'd', 'jobscout' ) ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;        
-        }elseif( is_month() ){            
+            echo $before . '<span itemprop="name">' . esc_html( get_the_time( __( 'd', 'jobscout' ) ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;
+        }elseif( is_month() ){
             $depth = 2;
             echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_year_link( get_the_time( __( 'Y', 'jobscout' ) ) ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( get_the_time( __( 'Y', 'jobscout' ) ) ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
             $depth++;
-            echo $before . '<span itemprop="name">' . esc_html( get_the_time( __( 'F', 'jobscout' ) ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;        
-        }elseif( is_year() ){ 
+            echo $before . '<span itemprop="name">' . esc_html( get_the_time( __( 'F', 'jobscout' ) ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;
+        }elseif( is_year() ){
             $depth = 2;
-            echo $before .'<span itemprop="name">'. esc_html( get_the_time( __( 'Y', 'jobscout' ) ) ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;  
-        }elseif( is_search() ){ 
+            echo $before .'<span itemprop="name">'. esc_html( get_the_time( __( 'Y', 'jobscout' ) ) ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
+        }elseif( is_search() ){
             $depth       = 2;
             $request_uri = $_SERVER['REQUEST_URI'];
-            echo $before . '<span itemprop="name">' . sprintf( __( 'Search Results for "%s"', 'jobscout' ), esc_html( get_search_query() ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;        
+            echo $before . '<span itemprop="name">' . sprintf( __( 'Search Results for "%s"', 'jobscout' ), esc_html( get_search_query() ) ) . '</span><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;
         }elseif( jobscout_is_woocommerce_activated() && ( is_product_category() || is_product_tag() ) ){ //For Woocommerce archive page
             $depth = 2;
-            $current_term = $GLOBALS['wp_query']->get_queried_object();            
+            $current_term = $GLOBALS['wp_query']->get_queried_object();
             if( wc_get_page_id( 'shop' ) ){ //Displaying Shop link in woocommerce archive page
                 $_name = wc_get_page_id( 'shop' ) ? get_the_title( wc_get_page_id( 'shop' ) ) : '';
                 if ( ! $_name ) {
@@ -790,7 +775,7 @@ function jobscout_breadcrumbs_cb(){
                 $ancestors = get_ancestors( $current_term->term_id, 'product_cat' );
                 $ancestors = array_reverse( $ancestors );
                 foreach ( $ancestors as $ancestor ) {
-                    $ancestor = get_term( $ancestor, 'product_cat' );    
+                    $ancestor = get_term( $ancestor, 'product_cat' );
                     if ( ! is_wp_error( $ancestor ) && $ancestor ) {
                         echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                         $depth++;
@@ -810,8 +795,8 @@ function jobscout_breadcrumbs_cb(){
                 $_name             = $product_post_type->labels->singular_name;
             }
             echo $before . '<a itemprop="item" href="' . esc_url( $shop_url ) . '"><span itemprop="name">' . esc_html( $_name ) . '</span></a><meta itemprop="position" content="' . absint( $depth ) . '" />' . $after;
-        }elseif( is_single() && !is_attachment() ){   
-            $depth = 2;         
+        }elseif( is_single() && !is_attachment() ){
+            $depth = 2;
             if( jobscout_is_woocommerce_activated() && 'product' === get_post_type() ){ //For Woocommerce single product
                 if( wc_get_page_id( 'shop' ) ){ //Displaying Shop link in woocommerce archive page
                     $_name = wc_get_page_id( 'shop' ) ? get_the_title( wc_get_page_id( 'shop' ) ) : '';
@@ -820,14 +805,14 @@ function jobscout_breadcrumbs_cb(){
                         $_name = $product_post_type->labels->singular_name;
                     }
                     echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( wc_get_page_id( 'shop' ) ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $_name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
-                    $depth++;                    
-                }           
+                    $depth++;
+                }
                 if( $terms = wc_get_product_terms( $post->ID, 'product_cat', array( 'orderby' => 'parent', 'order' => 'DESC' ) ) ){
                     $main_term = apply_filters( 'woocommerce_breadcrumb_main_term', $terms[0], $terms );
                     $ancestors = get_ancestors( $main_term->term_id, 'product_cat' );
                     $ancestors = array_reverse( $ancestors );
                     foreach ( $ancestors as $ancestor ) {
-                        $ancestor = get_term( $ancestor, 'product_cat' );    
+                        $ancestor = get_term( $ancestor, 'product_cat' );
                         if ( ! is_wp_error( $ancestor ) && $ancestor ) {
                             echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_term_link( $ancestor ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $ancestor->name ) . '</span></a><meta itemprop="position" content="'. absint( $depth ).'" /><span class="separator">' . $delimiter . '</span></span>';
                             $depth++;
@@ -837,7 +822,7 @@ function jobscout_breadcrumbs_cb(){
                     $depth++;
                 }
                 echo $before . '<a href="' . esc_url( get_the_permalink() ) . '" itemprop="item"><span itemprop="name">' . esc_html( get_the_title() ) .'</span></a><meta itemprop="position" content="'. absint( $depth ).'" />' . $after;
-            }elseif( get_post_type() != 'post' ){  
+            }elseif( get_post_type() != 'post' ){
                 if( get_post_type() == 'rara-portfolio' ){
                     $depth = 2;
                     $portfolio = jobscout_get_page_id_by_template( 'templates/portfolio.php' );
@@ -847,8 +832,8 @@ function jobscout_breadcrumbs_cb(){
 
                     $cat_object = get_the_terms( get_the_ID(), 'rara_portfolio_categories' );
                     $potential_parent = 0;
-                    
-                    if( is_array( $cat_object ) ){ 
+
+                    if( is_array( $cat_object ) ){
                         //Now try to find the deepest term of those that we know of
                         $use_term = key( $cat_object );
 
@@ -859,7 +844,7 @@ function jobscout_breadcrumbs_cb(){
                                 $potential_parent = $object->term_id;
                             }
                         }
-                        
+
                         $cat = $cat_object[$use_term];
                         $cats = get_term_parents_list( $cat, 'rara_portfolio_categories', array( 'separator' => ',' ) );
                         $cats = explode( ',', $cats );
@@ -874,29 +859,29 @@ function jobscout_breadcrumbs_cb(){
                             }
                         }
                     }
-                    
+
                     echo $before .'<span itemprop="name">'. esc_html( get_the_title() ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
-                }else{              
-                    $post_type = get_post_type_object( get_post_type() );                
-                    if( $post_type->has_archive == true ){// For CPT Archive Link                   
+                }else{
+                    $post_type = get_post_type_object( get_post_type() );
+                    if( $post_type->has_archive == true ){// For CPT Archive Link
                        // Add support for a non-standard label of 'archive_title' (special use case).
                        $label = !empty( $post_type->labels->archive_title ) ? $post_type->labels->archive_title : $post_type->labels->name;
                        echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_post_type_archive_link( get_post_type() ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $label ) . '</span></a><meta itemprop="position" content="' . absint( $depth ) . '" /><span class="separator">' . $delimiter . '</span></span>';
-                       $depth++;    
+                       $depth++;
                     }
                     echo $before . '<span itemprop="name">' . esc_html( get_the_title() ) . '</span><meta itemprop="position" content="' . absint( $depth ) . '" />' . $after;
                 }
-            }else{ //For Post                
+            }else{ //For Post
                 $cat_object       = get_the_category();
                 $potential_parent = 0;
-                
+
                 if( $show_front === 'page' && $post_page ){ //If static blog post page is set
                     $p = get_post( $post_page );
-                    echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $post_page ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="' . absint( $depth ) . '" /><span class="separator">' . $delimiter . '</span></span>';  
-                    $depth++; 
+                    echo '<span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="' . esc_url( get_permalink( $post_page ) ) . '" itemprop="item"><span itemprop="name">' . esc_html( $p->post_title ) . '</span></a><meta itemprop="position" content="' . absint( $depth ) . '" /><span class="separator">' . $delimiter . '</span></span>';
+                    $depth++;
                 }
-                
-                if( $cat_object ){ //Getting category hierarchy if any        
+
+                if( $cat_object ){ //Getting category hierarchy if any
                     //Now try to find the deepest term of those that we know of
                     $use_term = key( $cat_object );
                     foreach( $cat_object as $key => $object ){
@@ -905,8 +890,8 @@ function jobscout_breadcrumbs_cb(){
                             $use_term         = $key;
                             $potential_parent = $object->term_id;
                         }
-                    }                    
-                    $cat  = $cat_object[$use_term];              
+                    }
+                    $cat  = $cat_object[$use_term];
                     $cats = get_category_parents( $cat, false, ',' );
                     $cats = explode( ',', $cats );
                     foreach ( $cats as $cat ) {
@@ -919,16 +904,16 @@ function jobscout_breadcrumbs_cb(){
                         }
                     }
                 }
-                echo $before . '<span itemprop="name">' . esc_html( get_the_title() ) . '</span><meta itemprop="position" content="' . absint( $depth ) . '" />' . $after;   
-            }        
-        }elseif( is_page() ){            
+                echo $before . '<span itemprop="name">' . esc_html( get_the_title() ) . '</span><meta itemprop="position" content="' . absint( $depth ) . '" />' . $after;
+            }
+        }elseif( is_page() ){
             $depth = 2;
-            if( $post->post_parent ){            
+            if( $post->post_parent ){
                 global $post;
                 $depth = 2;
                 $parent_id  = $post->post_parent;
                 $breadcrumbs = array();
-                
+
                 while( $parent_id ){
                     $current_page  = get_post( $parent_id );
                     $breadcrumbs[] = $current_page->ID;
@@ -941,9 +926,9 @@ function jobscout_breadcrumbs_cb(){
                     $depth++;
                 }
 
-                echo ' <span class="separator">' . esc_html( $delimiter ) . '</span> ' . $before .'<span itemprop="name">'. esc_html( get_the_title() ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" /></span>'. $after;      
+                echo ' <span class="separator">' . esc_html( $delimiter ) . '</span> ' . $before .'<span itemprop="name">'. esc_html( get_the_title() ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" /></span>'. $after;
             }else{
-                echo $before .'<span itemprop="name">'. esc_html( get_the_title() ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after; 
+                echo $before .'<span itemprop="name">'. esc_html( get_the_title() ) .'</span><meta itemprop="position" content="'. absint( $depth ).'" />'. $after;
             }
         }elseif( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ){ //For Custom Post Archive
             $depth     = 2;
@@ -953,17 +938,17 @@ function jobscout_breadcrumbs_cb(){
                 echo $before . sprintf( __('Page %s', 'jobscout'), get_query_var('paged') ) . $after; //@todo need to check this
             }else{
                 echo $before . '<span itemprop="name">' . esc_html( $post_type->label ) . '</span><meta itemprop="position" content="' . absint( $depth ). '" />' . $after;
-            }    
-        }elseif( is_attachment() ){ 
-            $depth = 2;           
+            }
+        }elseif( is_attachment() ){
+            $depth = 2;
             echo $before . '<span itemprop="name">' . esc_html( get_the_title() ) . '</span><meta itemprop="position" content="' . absint( $depth ) . '" />' . $after;
         }elseif( is_404() ){
             $depth = 2;
             echo $before . '<a itemprop="item" href="' . esc_url( home_url() ) . '"><span itemprop="name">' . esc_html__( '404 Error - Page Not Found', 'jobscout' ) . '</span></a><meta itemprop="position" content="' . absint( $depth ). '" />' . $after;
         }
-        
+
         if( get_query_var('paged') ) printf( __( ' (Page %s)', 'jobscout' ), get_query_var('paged') );
-        
-        echo '</div><!-- .crumbs -->';              
+
+        echo '</div><!-- .crumbs -->';
 }
 endif;

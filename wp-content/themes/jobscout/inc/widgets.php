@@ -48,11 +48,17 @@ function jobscout_widgets_init(){
             'id'          => 'footer-four',
             'description' => __( 'Add footer four widgets here.', 'jobscout' ),
         ),
-        'footer-subcribe'=> array(
-            'name'        => __( 'Footer Subcribe', 'jobscout' ),
-            'id'          => 'footer-subcribe',
-            'description' => __( 'Add footer subcribe widgets here.', 'jobscout' ),
-        )
+        'footer-subscribe'=> array(
+            'name'        => __( 'Footer Subscribe', 'jobscout' ),
+            'id'          => 'footer-subscribe',
+            'description' => __( 'Add footer subscribe widgets here.', 'jobscout' ),
+        ),
+        'footer-copyright'=> array(
+            'name'        => __( 'Footer Copyright', 'jobscout' ),
+            'id'          => 'footer-copyright',
+            'description' => __( 'Add footer copyright widgets here.', 'jobscout' ),
+        ),
+
     );
 
     foreach( $sidebars as $sidebar ){

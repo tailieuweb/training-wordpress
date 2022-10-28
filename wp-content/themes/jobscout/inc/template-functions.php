@@ -534,17 +534,26 @@ if( ! function_exists( 'jobscout_footer_bottom' ) ) :
  * Footer Bottom
 */
 function jobscout_footer_bottom(){ ?>
-    <div class="footer-b">
+    <div class="footer-t">
 		<div class="container">
             <?php
                 if ( function_exists( 'the_privacy_policy_link' )  )  the_privacy_policy_link( '<div class="privacy-block">', '</div>' );
             ?>
+            <div class="subcribe">
+                <?php
+                    $has_widget_subcribe = is_active_sidebar('footer-subscribe');
+                    if ($has_widget_subcribe) {
+                        dynamic_sidebar('footer-subscribe');
+                    }
+                ?>
+            </div>
 			<div class="copyright">
-            <?php
-                jobscout_get_footer_copyright();
-                jobscout_ed_author_link();
-                jobscout_ed_wp_link();
-            ?>
+                <?php
+                $has_widget_subcribe = is_active_sidebar('footer-copyright');
+                if ($has_widget_subcribe) {
+                    dynamic_sidebar('footer-copyright');
+                }
+                ?>
             </div>
 		</div>
 	</div>
