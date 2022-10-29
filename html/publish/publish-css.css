@@ -234,6 +234,10 @@ footer .footer-t .subcribe-custom p .newsletter-info {
     align-items: center;
 }
 
+footer .footer-t .subcribe-custom p  .wpcf7-submit {
+    border-color: #fff !important;
+}
+
 footer .footer-t .subcribe-custom p .wpcf7-form-control-wrap {
     width: 100%;
 }
