@@ -15,6 +15,14 @@ a.btn:hover, a.btn:focus {
     color: #EA751E;
 }
 
+.text-center {
+    text-align: center;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
 .mw-80 {
     max-width: 80%;
     margin: 0 auto;
@@ -248,6 +256,8 @@ footer .footer-t .subcribe-custom p .btn-secondary + span {
     margin: 0;
 }
 
+.site-content .contact-bottom,
+.site-content .contact-top,
 .site-content .about-top,
 .site-content .about-center,
 .site-content .about-bottom {
@@ -263,6 +273,7 @@ footer .footer-t .subcribe-custom p .btn-secondary + span {
     text-align: center;
 }
 
+.site-content .contact-bottom .content,
 .site-content .about-top .content,
 .site-content .about-bottom .content {
     display: flex;
@@ -288,6 +299,14 @@ footer .footer-t .subcribe-custom p .btn-secondary + span {
 
 }
 
+.site-content .contact-bottom .content .content-left,
+.site-content .contact-bottom .content .content-right {
+    width: 50%;
+    text-align: center;
+}
+
+.site-content .contact-top .title,
+.site-content .contact-bottom .content h4,
 .site-content .about-top .content .content-right h4,
 .site-content .about-bottom .content .content-right h4 {
     margin: 0;
@@ -295,6 +314,7 @@ footer .footer-t .subcribe-custom p .btn-secondary + span {
     line-height: 26px;
 }
 
+.site-content .contact-bottom .content p,
 .site-content .about-top .content .content-right p,
 .site-content .about-bottom .content .content-right p,
 .site-content .about-center .content p {
@@ -307,6 +327,11 @@ footer .footer-t .subcribe-custom p .btn-secondary + span {
     flex-direction: row-reverse;
 }
 
+.site-content .contact-bottom .content a {
+    color: #EA751E;
+    text-decoration: underline;
+}
+
 .site-content .about-bottom .content .content-left {
     padding-right: 0px;
     padding-left: 60px;
@@ -316,6 +341,7 @@ footer .footer-t .subcribe-custom p .btn-secondary + span {
     text-align: center;
 }
 
+.site-content .contact-top,
 .site-content .about-center {
     background-color: #FFF;
     text-align: center;
@@ -338,9 +364,11 @@ footer .footer-t .subcribe-custom p .btn-secondary + span {
     .site-content .about-top, .site-content .about-center, .site-content .about-bottom{
         padding: 30px 0;
     }
+    .site-content .contact-bottom .content,
     .site-content .about-top .content {
         flex-direction: column-reverse;
     }
+    .site-content .contact-bottom .content .content-left, .site-content .contact-bottom .content .content-right,
     .site-content .about-top .content .content-right, .site-content .about-bottom .content .content-right,
     .site-content .about-top .content .content-left, .site-content .about-bottom .content .content-left{
         width: 100%;
