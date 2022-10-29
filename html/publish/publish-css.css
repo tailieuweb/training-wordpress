@@ -1,15 +1,15 @@
-button, 
-input[type="button"], 
-input[type="reset"], 
+button,
+input[type="button"],
+input[type="reset"],
 input[type="submit"],
 a.btn {
     background: #EA751E;
     border: 1px solid #EA751E;
 }
 
-button:hover, 
-input[type="button"]:hover, 
-input[type="reset"]:hover, 
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
 input[type="submit"]:hover,
 a.btn:hover, a.btn:focus {
     color: #EA751E;
@@ -71,7 +71,7 @@ input,
 
 .banner-caption-custom .jobscout_job_filters .search_jobs > div:not(:first-child) {
     padding-left: 15px;
-}   
+}
 
 .main-navigation ul li {
     padding-left: 5px;
@@ -82,8 +82,8 @@ input,
     text-transform: uppercase;
 }
 
-.main-navigation ul li:hover > a, 
-.main-navigation ul li.current-menu-item>a, 
+.main-navigation ul li:hover > a,
+.main-navigation ul li.current-menu-item>a,
 .main-navigation ul li.current_page_item>a {
     border-bottom: 2px solid #EA751E;
     color: #000;
@@ -140,13 +140,13 @@ footer .footer-t {
 
 footer .footer-t .textwidget {
     text-align: center;
-   
+
 }
 
 footer .footer-t .textwidget p,
-.site-footer .widget ol li, 
-.site-footer .widget ul li, 
-.site-footer .widget ul li a, 
+.site-footer .widget ol li,
+.site-footer .widget ul li,
+.site-footer .widget ul li a,
 .site-footer .widget ol li a {
     color: #000;
 }
@@ -203,42 +203,42 @@ footer .footer-t .textwidget ul li a {
     border-radius: 60px;
 }
 
-footer .footer-t .subcribe-custom { 
+footer .footer-t .subcribe-custom {
    background-color: #EA751E;
    padding: 30px 0;
    margin-bottom: 80px;
 }
 
-footer .footer-t .subcribe-custom > .widget { 
+footer .footer-t .subcribe-custom > .widget {
     max-width: 1170px;
     margin: 0 auto;
 }
 
-footer .footer-t .subcribe-custom .newsletter {
+footer .footer-t .subcribe-custom p {
     display: flex;
     max-width: 90%;
     margin: 0 auto;
     align-items: center;
-    color: #FFF;    
+    color: #FFF;
     position: relative;
 }
 
-footer .footer-t .subcribe-custom .newsletter .btn-secondary {
+footer .footer-t .subcribe-custom p .wpcf7-submit {
     margin-left: auto;
 }
 
-footer .footer-t .subcribe-custom .newsletter .newsletter-info {
+footer .footer-t .subcribe-custom p .newsletter-info {
     display: flex;
     width: 100%;
     padding-right: 20px;
     align-items: center;
 }
 
-footer .footer-t .subcribe-custom .newsletter .newsletter-input {
+footer .footer-t .subcribe-custom p .wpcf7-form-control-wrap {
     width: 100%;
 }
 
-footer .footer-t .subcribe-custom .newsletter .btn-secondary + span {
+footer .footer-t .subcribe-custom p .btn-secondary + span {
     position: absolute;
     right: -40px;
     margin: 0;
@@ -351,25 +351,25 @@ footer .footer-t .subcribe-custom .newsletter .btn-secondary + span {
         max-width: 100%;
     }
     .site-content .about-bottom .content,
-    footer .footer-t .subcribe-custom .newsletter,
-    footer .footer-t .subcribe-custom .newsletter .newsletter-info  {
+    footer .footer-t .subcribe-custom p,
+    footer .footer-t .subcribe-custom p .newsletter-info  {
         flex-direction: column;
     }
 
-    footer .footer-t .subcribe-custom .newsletter .newsletter-info {
+    footer .footer-t .subcribe-custom p .newsletter-info {
         padding: 0 0 20px 0;
         font-size: 22px;
     }
 
-    footer .footer-t .subcribe-custom .newsletter .newsletter-input {
+    footer .footer-t .subcribe-custom p .newsletter-input {
         padding-top: 20px;
     }
 
-    footer .footer-t .subcribe-custom .newsletter .btn-secondary {
+    footer .footer-t .subcribe-custom p .wpcf7-submit {
         width: 100%;
     }
 
-    footer .footer-t .subcribe-custom .newsletter .btn-secondary + span {
+    footer .footer-t .subcribe-custom p .btn-secondary + span {
         right: 0;
     }
 
@@ -382,11 +382,11 @@ footer .footer-t .subcribe-custom .newsletter .btn-secondary + span {
         display: none;
     }
 
-    .bg-cta-section-custom .raratheme-cta-container .widget-title, 
+    .bg-cta-section-custom .raratheme-cta-container .widget-title,
     .banner-caption-custom .caption-inner .title {
         font-size: 24px;
         line-height: 30px;
-    }   
+    }
 
     .banner-caption-custom .jobscout_job_filters .search_jobs > div:not(:first-child) {
         padding: 15px 0 0 0;
