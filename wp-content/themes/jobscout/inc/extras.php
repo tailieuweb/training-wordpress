@@ -222,6 +222,7 @@ if( ! function_exists( 'jobscout_secondary_menu_fallback' ) ) :
  * Fallback for secondary menu
 */
 function jobscout_secondary_menu_fallback(){
+    return;
     if( current_user_can( 'manage_options' ) ){
         echo '<ul id="secondary-menu" class="menu">';
         echo '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">' . esc_html__( 'Click here to add a menu', 'jobscout' ) . '</a></li>';
