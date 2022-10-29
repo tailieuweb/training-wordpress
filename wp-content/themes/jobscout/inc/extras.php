@@ -185,8 +185,8 @@ function jobscout_primary_nagivation(){
     		?>
     	</nav><!-- #site-navigation -->
         <?php if( $post_job_label || $post_job_url ){ ?>
-            <div class="btn-wrap">
-                <a class="btn" href="<?php echo esc_url( $post_job_url ) ?>"><?php echo esc_html( $post_job_label ) ?></a>
+            <div class="btn-wrap user-submit-job">
+                <a class="btn user-submit-job" href="<?php echo esc_url( $post_job_url ) ?>"><?php echo esc_html( $post_job_label ) ?></a>
             </div>
         <?php }
 
