@@ -48,7 +48,7 @@ if( $post_slug ){
       <?php } ?>
 
       <div class="search_submit">
-        <input type="submit" value="<?php esc_attr_e( 'Search', 'jobscout'); ?>" />
+        <input type="submit" value="Search job" />
       </div>
 
     </div>

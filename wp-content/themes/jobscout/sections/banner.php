@@ -14,7 +14,7 @@ if( $ed_banner && has_custom_header() ){ ?>
     <div id="banner-section" class="site-banner<?php if( has_header_video() ) echo esc_attr( ' video-banner' ); ?>">
         <div class="item">
             <?php the_custom_header_markup(); ?>
-            <div class="banner-caption">
+            <div class="banner-caption banner-caption-custom">
                 <div class="container">
                     <div class="caption-inner">
                         <?php
