@@ -3,7 +3,7 @@ Theme Name: JobScout
 Theme URI: https://rarathemes.com/wordpress-themes/jobscout/
 Author: Rara Theme
 Author URI: https://rarathemes.com/
-Description: JobScout free WordPress theme is a complete solution for creating a website and posting jobs online for recruiters, employment agencies, and human resource company. You can create a fully-responsive and professional JobScout website with this theme without writing a single line of code. The theme features an attractive and engaging layout that helps you keep your visitors engaged on the website. This theme is optimized for speed and helps your website load in a blink of an eye and provides your visitors with the excellent user experience. Also, it is developed with SEO optimized codes and is Schema.org markup ready which boosts the ranking of your website in search engine results. Furthermore, it is a cross-browser compatible, translation ready and supports RTL scripts. Also, it is backed up by the super-friendly and experienced support team to help you with your issues and queries while using our theme. Check the demo at https://rarathemes.com/previews/?theme=jobscout, documentation at https://docs.rarathemes.com/docs/jobscout/ and get support at https://rarathemes.com/support-forum/.  
+Description: JobScout free WordPress theme is a complete solution for creating a website and posting jobs online for recruiters, employment agencies, and human resource company. You can create a fully-responsive and professional JobScout website with this theme without writing a single line of code. The theme features an attractive and engaging layout that helps you keep your visitors engaged on the website. This theme is optimized for speed and helps your website load in a blink of an eye and provides your visitors with the excellent user experience. Also, it is developed with SEO optimized codes and is Schema.org markup ready which boosts the ranking of your website in search engine results. Furthermore, it is a cross-browser compatible, translation ready and supports RTL scripts. Also, it is backed up by the super-friendly and experienced support team to help you with your issues and queries while using our theme. Check the demo at https://rarathemes.com/previews/?theme=jobscout, documentation at https://docs.rarathemes.com/docs/jobscout/ and get support at https://rarathemes.com/support-forum/.
 Version: 1.1.4
 Tested up to: 6.0
 Requires PHP: 5.6
@@ -2156,7 +2156,7 @@ body.home:not(.banner-enabled) .site-header {
 }
 
 .site-branding.logo-text .site-logo {
-  width: 60px;
+  //width: 60px;
 }
 
 .site-branding.logo-text .site-title-wrap {
@@ -5133,7 +5133,7 @@ WIDGET NEWSLETTER
 }
 
 /*===========================
-WIDGET FEATURED PAGE 
+WIDGET FEATURED PAGE
 ===========================*/
 .widget_raratheme_featured_page_widget .widget-featured-holder {
   display: flex;
@@ -5257,7 +5257,7 @@ WIDGET TEAM
 }
 
 /*========================
-WIDGET CALENDAR 
+WIDGET CALENDAR
 ========================*/
 .widget_calendar table {
   text-align: center;
@@ -6620,7 +6620,7 @@ RESPONSIVE STYLESHEET
   }
 
   /*========================
-	SITE BANNER 
+	SITE BANNER
 	========================*/
   .banner-caption .jobscout_job_filters .search_jobs {
     flex-direction: column;
