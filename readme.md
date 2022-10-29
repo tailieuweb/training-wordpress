@@ -32,3 +32,11 @@ https://rarathemesdemo.com/jobscout/?s=job
 
 404 page
 https://rarathemesdemo.com/jobscout/404
+
+shop
+http://wordpress.local/index.php/shop/
+Checkout
+http://wordpress.local/index.php/checkout/
+My Account
+http://wordpress.local/index.php/my-account/
+http://wordpress.local/index.php/my-account/

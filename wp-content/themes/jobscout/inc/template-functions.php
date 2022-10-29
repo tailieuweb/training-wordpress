@@ -535,11 +535,11 @@ if( ! function_exists( 'jobscout_footer_bottom' ) ) :
 */
 function jobscout_footer_bottom(){ ?>
     <div class="footer-t">
-		<div class="container">
+		<div class="container container-fluid">
             <?php
                 if ( function_exists( 'the_privacy_policy_link' )  )  the_privacy_policy_link( '<div class="privacy-block">', '</div>' );
             ?>
-            <div class="subcribe">
+            <div class="subcribe subcribe-custom">
                 <?php
                     $has_widget_subcribe = is_active_sidebar('footer-subscribe');
                     if ($has_widget_subcribe) {
@@ -557,6 +557,13 @@ function jobscout_footer_bottom(){ ?>
             </div>
 		</div>
 	</div>
+    <div class="footer-b">
+        <div class="container">
+            <div class="copyright">
+                <span class="copyright-text">© 2022 Plan･Do･See Inc.</span>
+            </div>
+        </div>
+    </div>
     <?php
 }
 endif;
