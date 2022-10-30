@@ -15,7 +15,7 @@
  * Prevent direct access data leaks
  **/
 if ( ! defined( 'ABSPATH' ) ) {
-    exit; 
+    exit;
 }
 
 add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'gma_wpjmef_add_support_link_to_plugin_page' );
@@ -23,15 +23,19 @@ add_action( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'gma_wpjmef_ad
 // Submit form filters
 add_filter( 'submit_job_form_fields', 'gma_wpjmef_frontend_add_salary_field');
 add_filter( 'submit_job_form_fields', 'gma_wpjmef_frontend_add_important_info_field');
+add_filter( 'submit_job_form_fields', 'gma_wpjmef_frontend_add_rating');
 // Text fields filters
 add_filter( 'job_manager_job_listing_data_fields', 'gma_wpjmef_admin_add_salary_field' ); // #
 add_filter( 'job_manager_job_listing_data_fields', 'gma_wpjmef_admin_add_important_info_field' );
+add_filter( 'job_manager_job_listing_data_fields', 'gma_wpjmef_admin_add_rating_field' );
 // Single Job page filters
 add_action( 'single_job_listing_meta_end', 'gma_wpjmef_display_job_salary_data' );
 add_action( 'single_job_listing_meta_end', 'gma_wpjmef_display_important_info_data' );
+add_action( 'single_job_listing_meta_end', 'gma_wpjmef_display_rating_data' );
 // Dashboard: Job Listings > Jobs filters
 add_filter( 'manage_edit-job_listing_columns', 'gma_wpjmef_retrieve_salary_column' );
 add_filter( 'manage_job_listing_posts_custom_column', 'gma_wpjmef_display_salary_column' );
+add_filter( 'manage_job_listing_posts_custom_column', 'gma_wpjmef_display_rating_column' );
 
 /**
 * Sets the job_salary metadata as a new $column that can be used in the back-end
@@ -48,24 +52,47 @@ function gma_wpjmef_retrieve_salary_column($columns){
 **/
 
 function gma_wpjmef_display_salary_column($column){
-  
+
   global $post;
 
-  switch ($column) {    
+  switch ($column) {
     case 'job_salary':
-      
+
       $salary = get_post_meta( $post->ID, '_job_salary', true );
-      
+
       if ( !empty($salary)) {
         echo $salary;
       } else {
         echo '-';
-      
+
       }
     break;
   }
 
   return $column;
+
+};
+
+
+function gma_wpjmef_display_rating_column($column){
+
+    global $post;
+
+    switch ($column) {
+        case 'job_rating':
+
+            $rating = get_post_meta( $post->ID, '_job_rating', true );
+
+            if ( !empty($rating)) {
+                echo $rating;
+            } else {
+                echo '-';
+
+            }
+            break;
+    }
+
+    return $column;
 
 };
 
@@ -85,7 +112,7 @@ function gma_wpjmef_add_support_link_to_plugin_page( $links ){
 * Adds a new optional "Salary" text field at the "Submit a Job" form, generated via the [submit_job_form] shortcode
 **/
 function gma_wpjmef_frontend_add_salary_field( $fields ) {
-  
+
   $fields['job']['job_salary'] = array(
     'label'       => __( 'Salary', 'wpjm-extra-fields' ),
     'type'        => 'text',
@@ -103,7 +130,7 @@ function gma_wpjmef_frontend_add_salary_field( $fields ) {
 * Adds a new optional "Important Information" text field at the "Submit a Job" form, generated via the [submit_job_form] shortcode
 **/
 function gma_wpjmef_frontend_add_important_info_field( $fields ) {
-  
+
   $fields['job']['job_important_info'] = array(
     'label'       => __( 'Important information: ', 'wpjm-extra-fields' ),
     'type'        => 'text',
@@ -112,8 +139,26 @@ function gma_wpjmef_frontend_add_important_info_field( $fields ) {
     'description' => '',
     'priority'    => 8,
   );
-  
+
   return $fields;
+
+}
+
+/**
+ * Adds a new optional "Rating" text field at the "Submit a Job" form, generated via the [submit_job_form] shortcode
+ **/
+function gma_wpjmef_frontend_add_rating( $fields ) {
+
+    $fields['job']['job_rating'] = array(
+        'label'       => __( 'Rating: ', 'wpjm-extra-fields' ),
+        'type'        => 'text',
+        'required'    => false,
+        'placeholder' => 'e.g. 5',
+        'description' => '',
+        'priority'    => 9,
+    );
+
+    return $fields;
 
 }
 
@@ -121,7 +166,7 @@ function gma_wpjmef_frontend_add_important_info_field( $fields ) {
 * Adds a text field to the Job Listing wp-admin meta box named “Salary”
 **/
 function gma_wpjmef_admin_add_salary_field( $fields ) {
-  
+
   $fields['_job_salary'] = array(
     'label'       => __( 'Salary', 'wpjm-extra-fields' ),
     'type'        => 'text',
@@ -137,7 +182,7 @@ function gma_wpjmef_admin_add_salary_field( $fields ) {
 * Adds a text field to the Job Listing wp-admin meta box named "Important Information"
 **/
 function gma_wpjmef_admin_add_important_info_field( $fields ) {
-  
+
   $fields['_job_important_info'] = array(
     'label'       => __( 'Important information', 'wpjm-extra-fields' ),
     'type'        => 'text',
@@ -149,11 +194,28 @@ function gma_wpjmef_admin_add_important_info_field( $fields ) {
 
 }
 
+
+/**
+ * Adds a text field to the Job Listing wp-admin meta box named "Rating"
+ **/
+function gma_wpjmef_admin_add_rating_field( $fields ) {
+
+    $fields['_job_rating'] = array(
+        'label'       => __( 'Rating', 'wpjm-extra-fields' ),
+        'type'        => 'text',
+        'placeholder' => 'e.g. 5',
+        'description' => ''
+    );
+
+    return $fields;
+
+}
+
 /**
 * Displays "Salary" on the Single Job Page, by checking if meta for "_job_salary" exists and is displayed via do_action( 'single_job_listing_meta_end' ) on the template
 **/
 function gma_wpjmef_display_job_salary_data() {
-  
+
   global $post;
 
   $salary = get_post_meta( $post->ID, '_job_salary', true );
@@ -169,7 +231,7 @@ function gma_wpjmef_display_job_salary_data() {
 * Displays the content of the "Important Information" text-field on the Single Job Page, by checking if meta for "_job_important_info" exists and is displayed via do_action( 'single_job_listing_meta_end' ) on the template
 **/
 function gma_wpjmef_display_important_info_data() {
-  
+
   global $post;
 
   $important_info = get_post_meta( $post->ID, '_job_important_info', true );
@@ -180,14 +242,29 @@ function gma_wpjmef_display_important_info_data() {
 
 }
 
+
+/**
+ * Displays the content of the "Rating text-field on the Single Job Page, by checking if meta for "_job_important_info" exists and is displayed via do_action( 'single_job_listing_meta_end' ) on the template
+ **/
+function gma_wpjmef_display_rating_data() {
+
+    global $post;
+
+    $important_info = get_post_meta( $post->ID, '_job_important_info', true );
+
+    if ( $important_info ) {
+        echo '<li class="wpjmef-field-important-info">' . esc_html( $important_info ) . '</li>';
+    }
+
+}
 /**
  * Display an error message notice in the admin if WP Job Manager is not active
  */
 function gma_wpjmef_admin_notice__error() {
-	
+
   $class = 'notice notice-error';
 	$message = __( 'An error has occurred. WP Job Manager must be installed in order to use this plugin', 'wpjm-extra-fields' );
 
-	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) ); 
+	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
 
 }
