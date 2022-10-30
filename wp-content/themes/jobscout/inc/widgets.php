@@ -58,6 +58,11 @@ function jobscout_widgets_init(){
             'id'          => 'footer-copyright',
             'description' => __( 'Add footer copyright widgets here.', 'jobscout' ),
         ),
+        'footer-recent-news'=> array(
+            'name'        => __( 'Footer recent news', 'jobscout' ),
+            'id'          => 'footer-recent-news',
+            'description' => __( 'Add footer recent news widgets here.', 'jobscout' ),
+        ),
 
     );
 

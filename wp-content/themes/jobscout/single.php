@@ -27,7 +27,7 @@ get_header(); ?>
          * @hooked jobscout_author        - 20
          * @hooked jobscout_comment       - 30
         */
-        do_action( 'jobscout_after_post_content' );
+        //do_action( 'jobscout_after_post_content' );
         ?>
 
 	</div><!-- #primary -->

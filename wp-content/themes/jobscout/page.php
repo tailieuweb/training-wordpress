@@ -23,7 +23,7 @@ get_header(); ?>
 
 				/**
                  * Comment Template
-                 * 
+                 *
                  * @hooked jobscout_comment
                 */
                 do_action( 'jobscout_after_page_content' );

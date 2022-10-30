@@ -199,7 +199,11 @@ function jobscout_content_start(){
                 }
             }
         ?>
-        <div class="container">
+        <?php if (is_page('about') || is_page('contact')): ?>
+            <div class="">
+        <?php else: ?>
+            <div class="container">
+        <?php endif ?>
         <?php
     }
 }
@@ -332,8 +336,15 @@ function jobscout_entry_footer(){
 
             if( is_single() ) echo '<div class="entry-footer-right">';
             if( 'post' === get_post_type() && is_single() ){
-                if( ! $ed_post_date ) jobscout_posted_on( true );
-                jobscout_comment_count();
+
+//                $has_widget_recent_news = is_active_sidebar('footer-recent-news');
+//                if ($has_widget_recent_news) {
+//                    dynamic_sidebar('footer-recent-news');
+//                }
+                get_template_part( 'sections/' . esc_attr( 'blog' ) );
+
+//                if( ! $ed_post_date ) jobscout_posted_on( true );
+//                jobscout_comment_count();
             }
 
             if( get_edit_post_link() ){
