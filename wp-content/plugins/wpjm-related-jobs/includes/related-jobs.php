@@ -68,7 +68,7 @@ function wpjm_related_jobs_display($options=array()) {
             $date = get_post();
             $job_date = date('d-m-Y', strtotime($date->post_date));
             if (!empty($company_image[0])) {
-                $company_image = '<img class="company_logo" src="' . esc_url( $company_image[0] ) . '" alt="' . esc_attr( $company ) . '" />';
+                $company_image = '<img class="company_logo company-logo" src="' . esc_url( $company_image[0] ) . '" alt="' . esc_attr( $company ) . '" />';
             } else {
                 $company_image = '';
             }
@@ -76,12 +76,14 @@ function wpjm_related_jobs_display($options=array()) {
             $result .= '<li class="col_'.$columns.'">
                  <div class="job-meta">
                     '.$company_image.'
+                    <div class="job-meta-info">
                     <div class="title"><a href="'.get_the_permalink().'">'.get_the_title().'</a></div>
                     <span class="date">Ngày tạo: '.$job_date.'</span>
                     <div class="job-group-meta">
                         <div class="comp">'.$company.'</div>
                         <div class="jt"><span>'.current( $types ).'</span></div>
                         <div class="loc"><span class="dashicons dashicons-location"></span>'.$location.'</div>
+                    </div>
                     </div>
                 </div>
 

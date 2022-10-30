@@ -193,7 +193,7 @@ function jobscout_content_start(){
                 $banner_image   = get_header_image();
                 $show_banner    = get_theme_mod( 'ed_job_banner', true );
 
-                if( $banner_image && $show_banner ){
+                if(1 < 0 && $banner_image && $show_banner){
                     $banner_style = 'background-image: url(' . esc_url( $banner_image ) . '); background-size: cover;';
                     echo '<header class="entry-header" style="'. esc_attr( $banner_style ) .'"></header>';
                 }
