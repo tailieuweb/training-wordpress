@@ -188,11 +188,14 @@ input,
     flex-wrap: nowrap;
 }
 
+
+.single .site-main article figure.post-thumbnail,
 .article-section-custom .article-wrap article .post-thumbnail {
     margin-bottom: 0;
     display: block;
     width: 200px;
     height: 200px;
+    overflow: inherit;
 }
 
 .article-section-custom .article-wrap article .post-thumbnail svg,
@@ -539,6 +542,7 @@ footer .footer-t .subcribe-custom p .has-spinner + span + span {
     color: #828282;
 }
 
+.single .site-main article .news-meta-info .entry-meta, 
 .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .job-group-meta,
 .single-job .site-content .site-main .entry-content .col-2 ul.job-listing-meta,
 .job_listings .job_listings.job-listings-custom article .job-title-wrap .entry-meta {
@@ -551,6 +555,7 @@ footer .footer-t .subcribe-custom p .has-spinner + span + span {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+    width: max-content;
 }
 
 .single-job .site-content .site-main .entry-content .col-2 ul.job-listing-meta .salary,
@@ -712,6 +717,7 @@ div.job_listings .load_more_jobs::before {
     display: none;
 }
 
+.news-meta-info,
 .single_job_listing .job-detail-meta {
     display: flex;
     align-items: center;
@@ -720,6 +726,7 @@ div.job_listings .load_more_jobs::before {
     margin-bottom: 20px;
 }
 
+.single .site-main article .news-meta-info .entry-title,
 .single_job_listing .job-detail-meta .col-2 .job-title {
     font-weight: 700;
     font-size: 18px;
@@ -728,6 +735,7 @@ div.job_listings .load_more_jobs::before {
     margin-top: 0;
 } 
 
+.single .site-main article .news-meta-info .post-created-date,
 .single_job_listing .job-detail-meta .col-2 .created_at {
     font-weight: 500;
     font-size: 14px;
@@ -737,6 +745,7 @@ div.job_listings .load_more_jobs::before {
     margin-bottom: 10px;
 } 
 
+.single .site-main article .news-meta-info .col-3,
 .single_job_listing .job-detail-meta .col-3 {
     margin-left: auto;
     padding-left: 30px;
@@ -765,6 +774,7 @@ div.job_listings .load_more_jobs::before {
     margin: 0
 }
 
+.single .site-main article .news-meta-info figure.post-thumbnail,
 .single-job_listing .site-main .single_job_listing .company {
     padding: 0;
     margin: 0 30px 0 0;
@@ -772,6 +782,8 @@ div.job_listings .load_more_jobs::before {
     height: 140px;
     display: block;
 }
+
+.single .site-main article .news-meta-info figure.post-thumbnail img,
 .single-job_listing .site-main .single_job_listing .company img {
     width: 140px;
     height: 140px;
@@ -811,7 +823,7 @@ div.job_listings .load_more_jobs::before {
 }
 
 .edit-link {
-    display: none;
+    display: none !important;
 }
 
 @media screen and (max-width: 1024px) {
@@ -831,6 +843,7 @@ div.job_listings .load_more_jobs::before {
 }
 
 @media (max-width: 992px) {
+    .single .site-main article figure.post-thumbnail,
     .article-section-custom .article-wrap article .post-thumbnail > a,
     .article-section-custom .article-wrap article .post-thumbnail {
         width: 120px;
