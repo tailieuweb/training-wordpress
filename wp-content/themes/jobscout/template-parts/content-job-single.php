@@ -8,7 +8,7 @@
  */
  ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php 
+	<?php
 		/**
          * @hooked jobscout_get_single_job_title - 10
          * @hooked jobscout_entry_content    - 15

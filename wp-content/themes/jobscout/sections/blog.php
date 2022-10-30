@@ -23,7 +23,7 @@ $args = array(
 $qry = new WP_Query( $args );
 
 if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
-<section id="blog-section" class="article-section">
+<section id="blog-section" class="article-section article-section-custom">
 	<div class="container">
         <?php
             if( $blog_heading ) echo '<h2 class="section-title">' . esc_html( $blog_heading ) . '</h2>';
@@ -48,15 +48,16 @@ if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
                             </a>
                         </figure>
                         <header class="entry-header">
-                            <div class="entry-meta">
-                                <?php 
-                                    if( ! $hide_author ) jobscout_posted_by();
-                                    if( ! $hide_date ) jobscout_posted_on();
-                                ?>
-                            </div>
+
                             <h3 class="entry-title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
+                            <div class="entry-meta">
+                                <?php
+                                if( ! $hide_author ) jobscout_posted_by();
+                                if( ! $hide_date ) jobscout_posted_on();
+                                ?>
+                            </div>
                             <div class="entry-overview">
                                 <?php the_excerpt(); ?>
                             </div>

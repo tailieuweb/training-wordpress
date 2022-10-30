@@ -23,24 +23,20 @@ if ( job_manager_user_can_view_job_listing( $post->ID ) ) : ?>
 		<?php if ( get_option( 'job_manager_hide_expired_content', 1 ) && 'expired' === $post->post_status ) : ?>
 			<div class="job-manager-info"><?php _e( 'This listing has expired.', 'wp-job-manager' ); ?></div>
 		<?php else : ?>
-            <div class="job-detail-meta">
-                <div class="col-1">
-                    <?php get_job_manager_template( 'content-single-job_listing-company.php', [] ); ?>
-                </div>
-                <div class="col-2">
-                    <h1 class="job-title"><?php the_title(); ?></h1>
-                     <span class="created_at"><?php echo the_time('d-m-Y', $post->post_date) ?></span>
-                    <?php get_job_manager_template( 'content-single-job_listing-meta.php', [] ); ?>
-                </div>
-                <div class="col-3">
-                    <?php if ( candidates_can_apply() ) : ?>
-                    <div class="job_application application">
-                        <input type="button" class="application_button button" value="Apply for job">
-                    </div>
-                    <?php endif; ?>
-                </div>
-            </div>
 
+			<?php
+				/**
+				 * single_job_listing_start hook
+				 *
+				 * @hooked job_listing_meta_display - 20
+				 * @hooked job_listing_company_display - 30
+				 */
+            get_job_manager_template( 'content-single-job_listing-company.php', [] );
+				do_action( 'single_job_listing_start' );
+			?>
+            <?php if ( candidates_can_apply() ) : ?>
+                <?php get_job_manager_template( 'job-application.php' ); ?>
+            <?php endif; ?>
 
 			<div class="job_description">
 				<?php wpjm_the_job_description(); ?>

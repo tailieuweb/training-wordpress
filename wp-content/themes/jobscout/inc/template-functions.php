@@ -386,7 +386,7 @@ function jobscout_get_single_job_title(){
     <?php
 }
 endif;
-add_action( 'jobscout_before_single_job_content', 'jobscout_get_single_job_title' );
+//add_action( 'jobscout_before_single_job_content', 'jobscout_get_single_job_title' );
 
 if( ! function_exists( 'jobscout_navigation' ) ) :
 /**

@@ -1253,6 +1253,15 @@ function wpjm_add_post_class( $classes, $class, $post_id ) {
 add_action( 'post_class', 'wpjm_add_post_class', 10, 3 );
 
 /**
+ * Displays job company data on the single job page.
+ *
+ * @since 1.14.0
+ */
+function job_listing_company_display() {
+    get_job_manager_template( 'content-single-job_listing-company.php', [] );
+}
+add_action( 'single_job_listing_start', 'job_listing_company_display', 30 );
+/**
  * Displays job meta data on the single job page.
  *
  * @since 1.14.0
@@ -1260,17 +1269,9 @@ add_action( 'post_class', 'wpjm_add_post_class', 10, 3 );
 function job_listing_meta_display() {
 	get_job_manager_template( 'content-single-job_listing-meta.php', [] );
 }
-add_action( 'single_job_listing_start', 'job_listing_meta_display', 20 );
+add_action( 'single_job_listing_start', 'job_listing_meta_display', 31 );
 
-/**
- * Displays job company data on the single job page.
- *
- * @since 1.14.0
- */
-function job_listing_company_display() {
-	get_job_manager_template( 'content-single-job_listing-company.php', [] );
-}
-add_action( 'single_job_listing_start', 'job_listing_company_display', 30 );
+
 
 /**
  * Gets the job salary.

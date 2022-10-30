@@ -20,16 +20,16 @@ get_header(); ?>
 		?>
 
 		</main><!-- #main -->
-        
+
         <?php
         /**
-         * @hooked jobscout_navigation    - 10 
+         * @hooked jobscout_navigation    - 10
          * @hooked jobscout_author        - 20
          * @hooked jobscout_comment       - 30
         */
         do_action( 'jobscout_after_post_content' );
         ?>
-        
+
 	</div><!-- #primary -->
 
 <?php
