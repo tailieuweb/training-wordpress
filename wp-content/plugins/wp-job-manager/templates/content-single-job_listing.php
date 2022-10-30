@@ -33,6 +33,7 @@ if ( job_manager_user_can_view_job_listing( $post->ID ) ) : ?>
                     <?php get_job_manager_template( 'content-single-job_listing-meta.php', [] ); ?>
                 </div>
                 <div class="col-3">
+                    [addthis tool="addthis_inline_share_toolbox_2ptb"]
                     <?php if ( candidates_can_apply() ) : ?>
                     <div class="job_application application">
                         <input type="button" class="application_button button" value="Apply for job">
