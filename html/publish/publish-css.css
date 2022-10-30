@@ -8,6 +8,7 @@ a.btn {
 }
 
 .entry-content a:hover,
+.top-job-section div.job_listings .load_more_jobs:hover,
  div.job_listings .load_more_jobs:hover,
 .widget-area .widget ul li a:hover, .widget-area .widget ol li a:hover, .site-footer .widget ul li a:hover,
 .entry-title a:hover,
@@ -20,7 +21,7 @@ a {
     max-width: 300px;
 }
 
-input[type="submit"]:hover,
+.subcribe-custom input[type="submit"]:hover,
 .widget_raratheme_companion_cta_widget a.btn-cta:hover {
     color: #FFF;
 }
@@ -665,6 +666,7 @@ footer .footer-t .subcribe-custom p .has-spinner + span + span {
     display: none;
 }
 
+.top-job-section div.job_listings .load_more_jobs,
 div.job_listings .load_more_jobs {
     background-color: transparent;
     border-color: #EA751E;
@@ -674,6 +676,7 @@ div.job_listings .load_more_jobs {
     margin-top: 50px;
 }
 
+.top-job-section div.job_listings .load_more_jobs::before,
 div.job_listings .load_more_jobs::before {
     display: none;
 }
@@ -821,6 +824,9 @@ div.job_listings .load_more_jobs::before {
     }
     .top-job-section .row div.job_listings article .job-title-wrap {
         padding-left: 16px;
+    }
+    .header-main .main-navigation .toggle-btn:hover .toggle-bar {
+        background-color: #EA751E;
     }
 }
 
