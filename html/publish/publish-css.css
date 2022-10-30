@@ -7,6 +7,7 @@ a.btn {
     border: 1px solid #EA751E;
 }
 
+.entry-meta>span a:hover,
 .entry-content a:hover,
 .top-job-section div.job_listings .load_more_jobs:hover,
  div.job_listings .load_more_jobs:hover,
@@ -744,6 +745,10 @@ div.job_listings .load_more_jobs::before {
     color: #828282;
     margin-bottom: 10px;
 } 
+
+.single .site-main article .news-meta-info .post-created-date .posted-on a{
+    color: #828282;
+}
 
 .single .site-main article .news-meta-info .col-3,
 .single_job_listing .job-detail-meta .col-3 {
