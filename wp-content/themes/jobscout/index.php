@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area  article-section-custom">
 
         <?php
         /**
@@ -23,7 +23,7 @@ get_header(); ?>
         do_action( 'jobscout_before_posts_content' );
         ?>
 
-        <main id="main" class="site-main">
+        <main id="main" class="site-main article-wrap">
 
 		<?php
 		if ( have_posts() ) :

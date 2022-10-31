@@ -77,7 +77,7 @@ require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
  * Add theme compatibility function for woocommerce if active
 */
 if( jobscout_is_woocommerce_activated() ){
-    require get_template_directory() . '/inc/woocommerce-functions.php';    
+    require get_template_directory() . '/inc/woocommerce-functions.php';
 }
 
 /**
@@ -86,3 +86,7 @@ if( jobscout_is_woocommerce_activated() ){
 if( jobscout_is_wp_job_manager_activated() ) :
 	require get_template_directory() . '/inc/wp-job-manager-filters.php';
 endif;
+add_theme_support('post-thumbnails', array(
+    'post',
+    'blog',
+));

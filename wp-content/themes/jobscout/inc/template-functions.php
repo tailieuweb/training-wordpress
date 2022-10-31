@@ -202,6 +202,31 @@ function jobscout_content_start(){
         <?php if (is_page('about') || is_page('contact')): ?>
             <div class="">
         <?php else: ?>
+            <?php
+
+            global $wp_query;
+            $page_id = $wp_query->queried_object->ID;
+
+                if ($page_id == 15) {
+                    $post_excerpt = $wp_query->queried_object->post_excerpt;
+                    $post_image = get_the_post_thumbnail_url($page_id); ?>
+
+                    <div id="banner-section-blog" class="site-banner">
+                        <div class="item">
+                            <div id="wp-custom-header" class="wp-custom-header">
+                                <img src="<?php echo $post_image ?>" alt=""></div>
+                            <div class="banner-caption banner-caption-custom">
+                                <div class="container">
+                                    <div class="caption-inner">
+                                        <h2 class="title"><?php echo $post_excerpt ?></h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container blog-title">NEW BLOG ENTRIES</div>
+                <?php }
+            ?>
             <div class="container">
         <?php endif ?>
         <?php
