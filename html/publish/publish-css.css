@@ -844,22 +844,27 @@ div.job_listings .load_more_jobs::before {
     display: none !important;
 }
 
+
+.site-content > .entry-header,
 .content-area .type-page .entry-header {
     position: relative;
 }
 
+.site-content > .entry-header .post-thumbnail,
 .content-area .type-page .entry-header .post-thumbnail {
     margin-bottom: 0;
 }
 
-.content-area .type-page .entry-header .post-thumbnail img {
+.site-content > .entry-header .post-thumbnail img,
+    .content-area .type-page .entry-header .post-thumbnail img {
     width: 100%;
     max-height: 360px;
     height: 100%;
     object-fit: cover;
 }
 
-.content-area .type-page .entry-header .post-thumbnail + .entry-title {
+.site-content > .entry-header .post-thumbnail + .entry-title,
+    .content-area .type-page .entry-header .post-thumbnail + .entry-title {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -886,6 +891,24 @@ div.job_listings .load_more_jobs::before {
     border: none;
 }
 
+.container.blog-title {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 54px;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.navigation {
+    padding-top: 30px;
+}
+
+.navigation.posts-navigation .nav-links a:hover{
+    background-color: #EA751E;
+    border-color: #EA751E;
+    color: #FFF;
+}
 @media screen and (max-width: 1024px) {
     .site-main .entry-content div.job_listings div.job_listings article,
     .top-job-section .row div.job_listings article {
@@ -916,6 +939,8 @@ div.job_listings .load_more_jobs::before {
     footer .footer-t .subcribe-custom p .newsletter-info {
         font-size: 22px;
     }
+
+    .site-content > .entry-header .post-thumbnail + .entry-title,
     .content-area .type-page .entry-header .post-thumbnail + .entry-title{
         font-size: 24px;
         line-height: 38px;
