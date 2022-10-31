@@ -7,6 +7,7 @@ a.btn {
     border: 1px solid #EA751E;
 }
 
+.single-job .site-content .site-main .entry-content ul.job-listing-meta li a:hover,
 .entry-meta>span a:hover,
 .entry-content a:hover,
 .top-job-section div.job_listings .load_more_jobs:hover,
@@ -16,6 +17,12 @@ a.btn {
 a {
     color: #EA751E;
     text-decoration: none !important;
+}
+
+.hentry,
+.site-content {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .custom-logo-link img {
@@ -35,6 +42,8 @@ div.job_listings .load_more_jobs:hover {
 .site-banner .wp-custom-header img {
     width: 100%;
     max-height: 800px;
+    height: 100%;
+    object-fit: cover;
 }
 
 button:hover,
@@ -362,6 +371,9 @@ footer .footer-t .subcribe-custom p .newsletter-info {
     width: 100%;
     padding-right: 20px;
     align-items: center;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
 }
 
 footer .footer-t .subcribe-custom p  .wpcf7-submit {
@@ -794,6 +806,7 @@ div.job_listings .load_more_jobs::before {
     height: 140px;
     margin: 0;
     display: block;
+    object-fit: cover;
 }
 
 .single_job_listing .job_description {
@@ -831,6 +844,48 @@ div.job_listings .load_more_jobs::before {
     display: none !important;
 }
 
+.content-area .type-page .entry-header {
+    position: relative;
+}
+
+.content-area .type-page .entry-header .post-thumbnail {
+    margin-bottom: 0;
+}
+
+.content-area .type-page .entry-header .post-thumbnail img {
+    width: 100%;
+    max-height: 360px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content-area .type-page .entry-header .post-thumbnail + .entry-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 54px;
+    color: #FFF;
+    width: calc(100% - 40px);
+    text-align: center;
+}
+
+.category-travel {
+    padding-top: 30px;
+}
+
+.single .site-main .entry-content {
+    background-color: #FFF;
+    padding: 30px;
+}
+
+.single .site-main footer.entry-footer {
+    border: none;
+}
+
 @media screen and (max-width: 1024px) {
     .site-main .entry-content div.job_listings div.job_listings article,
     .top-job-section .row div.job_listings article {
@@ -858,6 +913,13 @@ div.job_listings .load_more_jobs::before {
 }
 
 @media (max-width: 767px) {
+    footer .footer-t .subcribe-custom p .newsletter-info {
+        font-size: 22px;
+    }
+    .content-area .type-page .entry-header .post-thumbnail + .entry-title{
+        font-size: 24px;
+        line-height: 38px;
+    }
     .single_job_listing .job-detail-meta .col-2 {
         text-align: center;
     }
