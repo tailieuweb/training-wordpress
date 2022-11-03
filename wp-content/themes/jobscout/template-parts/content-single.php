@@ -8,7 +8,6 @@
  */
 
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
         /**
@@ -28,7 +27,7 @@
                 <span class="post-category"><?php jobscout_category() ?></span>
             </div>
             <div class="col-3">
-                Facebook button error-css
+                <?php echo do_shortcode('[addthis tool="addthis_inline_share_toolbox_4di3"]') ?>
             </div>
         </div>
     <?php
