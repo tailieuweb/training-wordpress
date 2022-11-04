@@ -199,7 +199,7 @@ function jobscout_content_start(){
                 }
             }
         ?>
-        <?php if (is_page('about') || is_page('contact')): ?>
+        <?php if (is_page('gioi-thieu') || is_page('lien-he')): ?>
             <div class="">
         <?php else: ?>
             <?php
@@ -210,21 +210,12 @@ function jobscout_content_start(){
                 if ($page_id == 15) {
                     $post_excerpt = $wp_query->queried_object->post_excerpt;
                     $post_image = get_the_post_thumbnail_url($page_id); ?>
-
-                    <div id="banner-section-blog" class="site-banner">
-                        <div class="item">
-                            <div id="wp-custom-header" class="wp-custom-header">
-                                <img src="<?php echo $post_image ?>" alt=""></div>
-                            <div class="banner-caption banner-caption-custom">
-                                <div class="container">
-                                    <div class="caption-inner">
-                                        <h2 class="title"><?php echo $post_excerpt ?></h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container blog-title">NEW BLOG ENTRIES</div>
+                    <header class="entry-header">
+                        <figure class="post-thumbnail">
+                            <img width="1170" height="471" src="<?php echo $post_image ?>" class="attachment-jobscout-single-fullwidth size-jobscout-single-fullwidth wp-post-image" alt="" itemprop="image">                 </figure>
+                            <h1 class="entry-title"><?php echo $post_excerpt ?> </h1>
+                    </header>
+                    <div class="container blog-title">TIN TỨC - SỰ KIỆN</div>
                 <?php }
             ?>
             <div class="container">

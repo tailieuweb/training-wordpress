@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 
-         if (is_page('about') || is_page('contact')) {?>
+         if (is_page('gioi-thieu') || is_page('lien-he')) {?>
              <header class="entry-header">
                  <figure class="post-thumbnail">
                      <?php the_post_thumbnail( 'jobscout-single-fullwidth', array( 'itemprop' => 'image' ) ); ?>
