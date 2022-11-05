@@ -174,6 +174,29 @@ div.job_listings {
     max-width: 860px;
 }
 
+.banner-caption-custom .submit-job {
+    text-align: center;
+    text-transform: uppercase;
+    display: none;
+    font-size: 14px;
+}
+
+.banner-caption-custom .submit-job p {
+    color: #FFF;
+    margin: 20px 0;
+    font-weight: 700;
+}
+
+.banner-caption-custom .submit-job a.btn {
+    width: 100%;
+    text-align: center;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-caption-custom .submit-job a.btn,
 .bg-cta-section-custom .raratheme-cta-container .button-wrap a.btn-cta {
     border-radius: 0;
     background-color: transparent;
@@ -958,6 +981,21 @@ div.job_listings .load_more_jobs::before {
     .header-main .main-navigation .toggle-btn:hover .toggle-bar {
         background-color: #EA751E;
     }
+    .responsive-nav .close {
+        top: 20px;
+    }
+    .responsive-nav .mobile-menu .btn-wrap {
+        display: none;
+    }
+    
+    .banner-caption .jobscout_job_filters .search_jobs input, 
+    .banner-caption .jobscout_job_filters .search_jobs select{
+        height: 48px;
+    }
+    .banner-caption-custom .submit-job {
+        display: block;
+    }
+
 }
 
 @media (max-width: 992px) {
@@ -998,7 +1036,7 @@ div.job_listings .load_more_jobs::before {
         text-align: center;
     }
     .site-banner .wp-custom-header {
-        max-height: 400px;
+        max-height: 500px;
     }
     .container {
         max-width: 100%;
@@ -1114,8 +1152,11 @@ div.job_listings .load_more_jobs::before {
     .banner-caption-custom .form-wrap {
         padding: 0;
         background-color: transparent;
+        font-size: 14px;
+
     }
 
+    .responsive-nav .mobile-menu .btn-wrap,
     .banner-caption-custom .caption-inner .description {
         display: none;
     }
