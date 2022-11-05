@@ -16,8 +16,8 @@ get_header(); ?>
 				<div class="page-content">
 					<p class="error-text"><?php esc_html_e( 'The page you are looking for may have been moved, deleted, or possibly never existed.', 'jobscout' ); ?></p>
 					<div class="error-num"><?php esc_html_e( '404','jobscout' ); ?></div>
-					<a class="btn-readmore" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Take me to the home page', 'jobscout' ); ?></a>
-					<?php get_search_form(); ?>
+					<a class="btn-readmore btn-not-found-back" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Trang chủ', 'jobscout' ); ?></a>
+					<a class="btn-readmore btn-not-found-job" href="<?php echo esc_url( home_url( '/jobs' ) ); ?>"><?php esc_html_e( 'Việc làm', 'jobscout' ); ?></a>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 		</main><!-- #main -->

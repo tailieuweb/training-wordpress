@@ -205,7 +205,10 @@ function jobscout_content_start(){
             <?php
 
             global $wp_query;
-            $page_id = $wp_query->queried_object->ID;
+            $page_id = 0;
+                if (!empty($wp_query->queried_object->ID)) {
+                    $page_id = $wp_query->queried_object->ID;
+                }
 
                 if ($page_id == 15) {
                     $post_excerpt = $wp_query->queried_object->post_excerpt;

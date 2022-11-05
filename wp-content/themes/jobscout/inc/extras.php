@@ -609,7 +609,7 @@ function jobscout_posts_per_page_count(){
                     }
                 }
 
-                printf( esc_html__( '%1$s Showing:  %2$s - %3$s of %4$s Items %5$s', 'jobscout' ), '<span class="showing-result">', absint( $start_post_number ), absint( $end_post_number ), esc_html( number_format_i18n( $wp_query->found_posts ) ), '</span>' );
+               // printf( esc_html__( '%1$s Showing:  %2$s - %3$s of %4$s Items %5$s', 'jobscout' ), '<span class="showing-result">', absint( $start_post_number ), absint( $end_post_number ), esc_html( number_format_i18n( $wp_query->found_posts ) ), '</span>' );
             endif;
     }
 }
