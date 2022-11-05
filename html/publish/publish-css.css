@@ -28,6 +28,7 @@ a {
     text-decoration: none !important;
 }
 
+.error404 .error-holder,
 .hentry,
 .site-content {
     margin-top: 0;
@@ -445,6 +446,7 @@ footer .footer-t .subcribe-custom .newsletter-info span {
 
 footer .footer-t .subcribe-custom .newsletter-info span input{
     height: auto;
+    border: 2px solid #FFF
 }
 
 footer .footer-t .subcribe-custom p .has-spinner + span {
@@ -887,27 +889,32 @@ div.job_listings .load_more_jobs::before {
     display: none !important;
 }
 
-
+#acc-content .entry-header,
 .site-content > .entry-header,
 .content-area .type-page .entry-header {
     position: relative;
+    text-transform: uppercase;
 }
 
+#acc-content .entry-header .post-thumbnail,
 .site-content > .entry-header .post-thumbnail,
 .content-area .type-page .entry-header .post-thumbnail {
     margin-bottom: 0;
 }
 
+
+#acc-content  .entry-header .post-thumbnail img,
 .site-content > .entry-header .post-thumbnail img,
-    .content-area .type-page .entry-header .post-thumbnail img {
+.content-area .type-page .entry-header .post-thumbnail img {
     width: 100%;
     max-height: 360px;
     height: 100%;
     object-fit: cover;
 }
 
+#acc-content > .entry-header .post-thumbnail + .entry-title,
 .site-content > .entry-header .post-thumbnail + .entry-title,
-    .content-area .type-page .entry-header .post-thumbnail + .entry-title {
+.content-area .type-page .entry-header .post-thumbnail + .entry-title {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -965,6 +972,42 @@ div.job_listings .load_more_jobs::before {
 
 .newsletter-info br {
     margin: 0;
+}
+
+.error404 .error-404 {
+    padding: 100px 0 20px 0;
+}
+
+.error404 .site-main .error-404 .btn-readmore {
+    margin: 0 10px;
+}
+
+.error404 .site-main .error-404 .btn-readmore:hover {
+    opacity: 0.8;
+}
+
+.error404 .site-main .error-404 .btn-readmore.btn-not-found-back,
+.error404 .site-main .error-404 .btn-readmore.btn-not-found-job {
+    background: transparent;
+    border-radius: 0;
+    min-width: 160px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 22px;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 12px 20px;
+}
+
+.error404 .site-main .error-404 .btn-readmore.btn-not-found-back {
+    border-color: #000;
+    color: #000;
+}
+
+.error404 .site-main .error-404 .btn-readmore.btn-not-found-job {
+    border-color: #EA751E;
+    color: #EA751E;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1025,6 +1068,7 @@ div.job_listings .load_more_jobs::before {
         font-size: 22px;
     }
 
+    #acc-content > .entry-header .post-thumbnail + .entry-title, 
     .site-content > .entry-header .post-thumbnail + .entry-title, 
     .content-area .type-page .entry-header .post-thumbnail + .entry-title{
         font-size: 24px;
@@ -1207,6 +1251,7 @@ div.job_listings .load_more_jobs::before {
 
     footer .footer-t .subcribe-custom .newsletter-info span {
         padding-top: 15px;
+        padding-left: 0;
     }
 
     .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info, 
@@ -1225,5 +1270,13 @@ div.job_listings .load_more_jobs::before {
     .single_job_listing .job-detail-meta .col-3 {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 10px 0 !important;
+    }
+    .error404 .site-main .error-404 .btn-readmore {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .error404 .error-404 {
+        padding: 80px 0 0 0;
     }
 }
