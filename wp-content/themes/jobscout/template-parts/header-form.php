@@ -27,12 +27,12 @@ if( $post_slug ){
 
       <div class="search_keywords test">
         <label for="search_keywords"><?php esc_html_e( 'Keywords', 'jobscout' ); ?></label>
-        <input type="text" id="search_keywords" name="search_keywords" placeholder="<?php esc_attr_e( 'Keywords', 'jobscout' ); ?>">
+        <input type="text" id="search_keywords" name="search_keywords" placeholder="<?php esc_attr_e( 'Từ khóa', 'jobscout' ); ?>">
       </div>
 
       <div class="search_location">
         <label for="search_location"><?php esc_html_e( 'Location', 'jobscout' ); ?></label>
-        <input type="text"  id="search_location" name="search_location" placeholder="<?php esc_attr_e( 'Location', 'jobscout' ); ?>">
+        <input type="text"  id="search_location" name="search_location" placeholder="<?php esc_attr_e( 'Khu vực', 'jobscout' ); ?>">
       </div>
 
       <?php if( $ed_job_category ){ ?>
@@ -48,7 +48,7 @@ if( $post_slug ){
       <?php } ?>
 
       <div class="search_submit">
-        <input type="submit" value="Search job" />
+        <input type="submit" value="Tìm kiếm" />
       </div>
 
     </div>

@@ -50,7 +50,7 @@ function jobscout_get_header_post_job_label(){
  * Banner Section Title
 */
 function jobscout_get_banner_title(){
-    $banner_title = get_theme_mod( 'banner_title', __( 'Aim Higher, Dream Bigger', 'jobscout' ) );
+    $banner_title = get_theme_mod( 'banner_title', __( 'Nhiều công việc phù hợp với bạn', 'jobscout' ) );
 
     if ( $banner_title ){
         return esc_html( $banner_title );

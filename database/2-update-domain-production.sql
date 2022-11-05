@@ -1,0 +1,2 @@
+UPDATE `wp_options` SET `option_value` = 'http://wordpress.local' WHERE `wp_options`.`option_id` = 1;
+UPDATE `wp_options` SET `option_value` = 'http://wordpress.local' WHERE `wp_options`.`option_id` = 2;
