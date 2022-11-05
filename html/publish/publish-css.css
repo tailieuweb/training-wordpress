@@ -113,6 +113,10 @@ div.job_listings {
     max-width: 900px;
 }
 
+.relatedjobs .heading,
+.section-title,
+.container.blog-title,
+.site-content header.page-header .page-title,
 .bg-cta-section-custom .raratheme-cta-container .widget-title,
 .banner-caption-custom .caption-inner .title {
     font-size: 34px;
@@ -1010,6 +1014,10 @@ div.job_listings .load_more_jobs::before {
     color: #EA751E;
 }
 
+.site-content header.page-header .page-title {
+    padding-top: 40px;
+}
+
 @media screen and (max-width: 1024px) {
     .site-main .entry-content div.job_listings div.job_listings article,
     .top-job-section .row div.job_listings article {
@@ -1205,6 +1213,7 @@ div.job_listings .load_more_jobs::before {
         display: none;
     }
 
+    .site-content header.page-header .page-title,
     .relatedjobs .heading,
     .section-title,
     .container.blog-title,
