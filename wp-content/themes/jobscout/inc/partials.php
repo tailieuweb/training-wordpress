@@ -37,7 +37,7 @@ function jobscout_customize_partial_blogdescription() {
  * Header post job button
  */
 function jobscout_get_header_post_job_label(){
-    $btn_label = get_theme_mod( 'post_job_label', __( 'Tìm việc', 'jobscout' ) );
+    $btn_label = get_theme_mod( 'post_job_label', __( 'Đăng tìm việc', 'jobscout' ) );
 
     if ( $btn_label ){
         return esc_html( $btn_label );

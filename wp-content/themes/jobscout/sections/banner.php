@@ -36,6 +36,10 @@ if( $ed_banner && has_custom_header() ){ ?>
                             ?>
                             </div>
                         </div>
+                        <div class="submit-job">
+                            <p>Hoặc</p>
+                            <a class="btn user-submit-job pum-trigger btn-secondary" href="#" style="cursor: pointer;">Đăng tìm việc</a>
+                        </div>
                     </div>
                 </div>
             </div>

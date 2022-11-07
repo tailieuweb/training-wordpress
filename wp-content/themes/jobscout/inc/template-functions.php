@@ -35,7 +35,7 @@ if( ! function_exists( 'jobscout_responsive_header' ) ) :
  * Responsive Header
 */
 function jobscout_responsive_header(){
-    $post_job_label  = get_theme_mod( 'post_job_label', __( 'Tìm việc', 'jobscout' ) );
+    $post_job_label  = get_theme_mod( 'post_job_label', __( 'Đăng tìm việc', 'jobscout' ) );
     $post_job_url    = get_theme_mod( 'post_job_url', '#' );
     ?>
     <div class="responsive-nav">
@@ -144,6 +144,11 @@ function jobscout_content_start(){
     echo '<div id="acc-content"><!-- .site-header -->';
     $home_sections = jobscout_get_home_sections();
     if( ! ( is_front_page() && ! is_home() && $home_sections ) ){ //Make necessary adjust for pg template.
+        echo is_404() ? '<header class="entry-header">
+                    <figure class="post-thumbnail">
+                        <img width="1170" height="471" src="/publish/img/page-not-found.png" class="attachment-jobscout-single-fullwidth size-jobscout-single-fullwidth wp-post-image" alt="" itemprop="image">                 </figure>
+                    <h1 class="entry-title">TRANG KHÔNG TÌM THẤY</h1>             
+                </header>':'';
         echo is_404() ? '<div class="error-holder">' : '<div id="content" class="site-content">';
 
         if( is_archive() || is_search() || is_page_template( 'templates/portfolio.php' ) ) : ?>
