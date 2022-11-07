@@ -45,6 +45,8 @@ a {
     color: #FFF;
 }
 
+
+input[type="submit"]:hover,
 div.job_listings .load_more_jobs:hover {
     color: auto;
     opacity: 0.8;
@@ -427,6 +429,7 @@ footer .footer-t .subcribe-custom p {
 
 footer .footer-t .subcribe-custom p .wpcf7-submit {
     margin-left: auto;
+    padding: 6px 18px;
 }
 
 footer .footer-t .subcribe-custom p .newsletter-info {
@@ -450,7 +453,10 @@ footer .footer-t .subcribe-custom .newsletter-info span {
 
 footer .footer-t .subcribe-custom .newsletter-info span input{
     height: auto;
-    border: 2px solid #FFF
+    border: 2px solid #FFF;
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
 }
 
 footer .footer-t .subcribe-custom p .has-spinner + span {
@@ -763,7 +769,7 @@ div.job_listings .load_more_jobs::before {
 }
 
 .pum-theme-default-theme .pum-container > div {
-    max-width: 335px;
+    max-width: 420px;
     margin: 0 auto;
 }
 
@@ -1004,11 +1010,13 @@ div.job_listings .load_more_jobs::before {
     padding: 12px 20px;
 }
 
+.error404 .site-main .error-404 .btn-readmore.btn-not-found-job:hover,
 .error404 .site-main .error-404 .btn-readmore.btn-not-found-back {
     border-color: #000;
     color: #000;
 }
 
+.error404 .site-main .error-404 .btn-readmore.btn-not-found-back:hover,
 .error404 .site-main .error-404 .btn-readmore.btn-not-found-job {
     border-color: #EA751E;
     color: #EA751E;
@@ -1017,6 +1025,10 @@ div.job_listings .load_more_jobs::before {
 .page .site-main article .entry-title,
 .site-content header.page-header .page-title {
     padding-top: 40px;
+}
+
+.at-resp-share-element.at-mobile .at-label {
+    display: block;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1035,9 +1047,6 @@ div.job_listings .load_more_jobs::before {
     }
     .responsive-nav .close {
         top: 20px;
-    }
-    .responsive-nav .mobile-menu .btn-wrap {
-        display: none;
     }
     
     .banner-caption .jobscout_job_filters .search_jobs input, 
@@ -1061,6 +1070,9 @@ div.job_listings .load_more_jobs::before {
 }
 
 @media (max-width: 767px) {
+    footer .footer-t .subcribe-custom p .has-spinner + span {
+        right: 20px;
+    }
     .section-title,
     footer .footer-t .subcribe-custom p {
         max-width: 100%;
@@ -1209,7 +1221,6 @@ div.job_listings .load_more_jobs::before {
 
     }
 
-    .responsive-nav .mobile-menu .btn-wrap,
     .banner-caption-custom .caption-inner .description {
         display: none;
     }
