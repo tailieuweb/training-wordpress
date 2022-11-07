@@ -346,7 +346,7 @@ if( ! function_exists( 'jobscout_entry_footer' ) ) :
  * Entry Footer
 */
 function jobscout_entry_footer(){
-    $readmore = get_theme_mod( 'read_more_text', __( 'Read More', 'jobscout' ) );
+    $readmore = get_theme_mod( 'read_more_text', __( 'Xem thêm', 'jobscout' ) );
     $ed_post_date   = get_theme_mod( 'ed_post_date', false ); ?>
 	<footer class="entry-footer">
 		<?php

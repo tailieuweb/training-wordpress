@@ -44,7 +44,7 @@ add_action( 'admin_enqueue_scripts', 'add_gma_wpjmccp_admin_scripts' );
 * Front-end styles
 */
 function add_gma_wpjmccp_scripts(){
-	
+
 	wp_enqueue_style( 'gma_wpjmccp_style', plugin_dir_url(__FILE__) . 'style.css',false,'1.1','all');
 }
 
@@ -52,7 +52,7 @@ function add_gma_wpjmccp_scripts(){
 * Back-end styles
 */
 function add_gma_wpjmccp_admin_scripts(){
-	
+
 	wp_enqueue_style( 'gma_wpjmccp_admin_style', plugin_dir_url(__FILE__) . 'admin_style.css',false,'1.1','all');
 }
 
@@ -75,16 +75,16 @@ function gma_wpjmccp_companies_archive_page_template( $template ){
 	$plugin_dir_path = plugin_dir_path( __FILE__ );
 	$company_template_url = $plugin_dir_path . 'company-archive-page-template.php';
 
-	if ( is_tax($taxonomy="companies") ) { 
+	if ( is_tax($taxonomy="companies") ) {
 
     // TODO: Sometimes this fails as is_tax() returns NULL. This can be fixed flushing the cache via $wp_rewrite->flush_rules( true ); but is an expensive operation. Would be a good idea to integrate this somehow if the page returns a 404 for example.
 		$template = $company_template_url;
 		return $template;
-	
+
 	}
 
 	return $template;
-	
+
 }
 
 /*
@@ -108,7 +108,7 @@ function gma_wpjmcpp_job_taxonomy_init(){
 	);
 }
 
-/* 
+/*
 * Taxonomy metadata : Adds a new column to the companies term page under Job Listings > Companies
 */
 function gma_wpjmcpp_edit_term_columns( $columns ) {
@@ -118,11 +118,11 @@ function gma_wpjmcpp_edit_term_columns( $columns ) {
     return $columns;
 }
 
-/* 
+/*
 * Taxonomy metadata : Adds new field to the Companies term page under Job Listings > Companies
 */
-function gma_wpjmcpp_add_form_field_term_meta_text() { 
-   
+function gma_wpjmcpp_add_form_field_term_meta_text() {
+
     ?>
     <!-- HTML Output -->
     <div class="form-field term-meta-text-wrap">
@@ -132,10 +132,10 @@ function gma_wpjmcpp_add_form_field_term_meta_text() {
         <input type="text" name="term_meta_text" id="term-meta-text" value="" class="term-meta-text-field" />
     </div>
 
-	<?php 
+	<?php
 }
 
-/* 
+/*
 * Taxonomy metadata : Adds new field to the Companies edit term page.
 */
 function gma_wpjmcpp_edit_form_field_term_meta_text( $term ){
@@ -143,9 +143,9 @@ function gma_wpjmcpp_edit_form_field_term_meta_text( $term ){
 	$value = gma_wpjmcpp_get_term_meta_text( $term->term_id );
 
 	?>
-	
+
 	<!-- HTML Output -->
-    <tr class="form-field term-meta-text-wrap">   
+    <tr class="form-field term-meta-text-wrap">
         <th scope="row">
         	<label for="term-meta-text">
         		<?php _e( 'Company website', 'wpjm-company-profile-page' ); ?>
@@ -156,19 +156,19 @@ function gma_wpjmcpp_edit_form_field_term_meta_text( $term ){
         </td>
     </tr>
 
-	<?php 
+	<?php
 }
 
 /*
 * Taxonomy metadata: Gets the term metadata
 */
 function gma_wpjmcpp_get_term_meta_text( $term_id ) {
-  
+
   $value = get_term_meta( $term_id, '__term_meta_text', true );
   return $value;
 }
 
-/* 
+/*
 * Taxonomy metadata : Save term metadata
 */
 function gma_wpjmcpp_save_term_meta_text( $term_id ){
@@ -184,7 +184,7 @@ function gma_wpjmcpp_save_term_meta_text( $term_id ){
 
 }
 
-/* 
+/*
 * Taxonomy metadata : Display metadata in Columns
 */
 function gma_wpjmcpp_manage_term_custom_column( $out, $column, $term_id ) {
@@ -202,11 +202,11 @@ function gma_wpjmcpp_manage_term_custom_column( $out, $column, $term_id ) {
     return $out;
 }
 
-/* 
+/*
 * Taxonomy metadata : Display "Company Profile" link in single job listings
 */
 function gma_wpjmcpp_display_job_meta_data() {
-  
+
   global $post;
 
   $data = get_post_meta( $post->ID, "_company_name", true);
@@ -220,32 +220,35 @@ function gma_wpjmcpp_display_job_meta_data() {
   //wp_die();
   // ##
 
-  
-      $single_company_slug = $the_new_company_taxonomy[0]->slug;
-      $url = home_url() . '/company/' . $single_company_slug; // OK, page is created.
+    if (!empty($the_new_company_taxonomy[0]->slug)) {
+        $single_company_slug = $the_new_company_taxonomy[0]->slug;
+        $url = home_url() . '/company/' . $single_company_slug; // OK, page is created.
+    } else {
+        $url = '#';
+    }
 
 
 
   // Checks if the company name has been added as a tag to the individual job listing
   if (!empty($data)) {
-  	$company_name = "<li><a href='" . esc_url( $url ) . "'>" . esc_html( $data ) . " profile</a></li>";	
+  	$company_name = "<li><a href='" . esc_url( $url ) . "'>" . esc_html( $data ) . " profile</a></li>";
   } else {
-  	$company_name = "<li><a href='" . esc_url( $url ) . "'>Company profile</a></li>";	
+  	$company_name = "<li><a href='" . esc_url( $url ) . "'>Company profile</a></li>";
   }
 
   echo $company_name;
 
 }
 
-/* 
+/*
 * Admin notice to activate WP Job Manager
 */
 function gma_wpjmcpp_admin_notice__error(){
 
 	$class = 'notice notice-error';
 	$message = _e( 'An error has occurred. WP Job Manager must be installed in order to use WPJM Company Profile Page plugin', 'wpjm-company-profile-page' );
-	/* 
+	/*
 	* Debug: error_log( print_r( $message , true ) );
 	*/
-	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) ); 
+	printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) );
 }
