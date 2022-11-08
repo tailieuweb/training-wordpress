@@ -233,6 +233,7 @@ div.job_listings {
     margin-bottom: 0;
 }
 
+.wpcf7-not-valid-tip,
 .article-section-custom .btn-wrap {
     display: none;
 }
@@ -1296,6 +1297,12 @@ div.job_listings .load_more_jobs::before {
     .job_listings .job_listings.job-listings-custom article .job-title-wrap .entry-title{
         font-size: 14px !important;
         line-height: 22px !important;
+    }
+}
+
+@media (max-width: 515px) { 
+    .pum-container.pum-responsive {
+        left: 0 !important;
     }
 }
 
