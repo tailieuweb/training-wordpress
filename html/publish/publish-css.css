@@ -16,6 +16,7 @@ div.job_listings .load_more_jobs:focus{
     border-color: #EA751E;
 }
 
+.single .site-main footer.entry-footer a:hover,
 .single-job .site-content .site-main .entry-content ul.job-listing-meta li a:hover,
 .entry-meta>span a:hover,
 .entry-content a:hover,
@@ -209,6 +210,12 @@ div.job_listings {
     background-color: transparent;
     border-color: #FFF;
     padding: 10px 25px;
+}
+
+.banner-caption-custom .submit-job a.btn:hover,
+.bg-cta-section-custom .raratheme-cta-container .button-wrap a.btn-cta:hover {
+    border-color: #EA751E;
+    color: #EA751E;
 }
 
 .bg-cta-section-custom .raratheme-cta-container .widget-title {
@@ -626,6 +633,11 @@ footer .footer-t .subcribe-custom p .has-spinner + span + span {
     text-align: left;
     min-height: auto;
     color: #231815;
+}
+
+.single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .title a:hover,
+.job_listings .job_listings.job-listings-custom article .job-title-wrap .entry-title a:hover {
+    color: #EA751E;
 }
 
 .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .date,
