@@ -25,18 +25,36 @@ do_action( 'job_manager_job_filters_before', $atts );
 
 	<div class="search_jobs">
 		<?php do_action( 'job_manager_job_filters_search_jobs_start', $atts ); ?>
+        <div class="job-control-search">
+            <div class="search_keywords">
+                <label for="search_keywords"><?php esc_html_e( 'Từ khóa', 'wp-job-manager' ); ?></label>
+                <input type="text" name="search_keywords" id="search_keywords" placeholder="<?php esc_attr_e( 'Từ khóa', 'wp-job-manager' ); ?>" value="<?php echo esc_attr( $keywords ); ?>" />
+            </div>
 
-		<div class="search_keywords">
-			<label for="search_keywords"><?php esc_html_e( 'Keywords', 'wp-job-manager' ); ?></label>
-			<input type="text" name="search_keywords" id="search_keywords" placeholder="<?php esc_attr_e( 'Keywords', 'wp-job-manager' ); ?>" value="<?php echo esc_attr( $keywords ); ?>" />
-		</div>
+            <div class="search_location">
+                <label for="search_location"><?php esc_html_e( 'Khu vực', 'wp-job-manager' ); ?></label>
+                <input type="text" name="search_location" id="search_location" placeholder="<?php esc_attr_e( 'Khu vực', 'wp-job-manager' ); ?>" value="<?php echo esc_attr( $location ); ?>" />
+            </div>
+            <?php
+            /**
+             * Show the submit button on the job filters form.
+             *
+             * @since 1.33.0
+             *
+             * @param bool $show_submit_button Whether to show the button. Defaults to true.
+             * @return bool
+             */
+            if ( apply_filters( 'job_manager_job_filters_show_submit_button', true ) ) :
+                ?>
+                <div class="search_submit">
+                    <input type="submit" value="<?php esc_attr_e( 'Tìm kiếm', 'wp-job-manager' ); ?>">
+                </div>
+            <?php endif; ?>
+        </div>
 
-		<div class="search_location">
-			<label for="search_location"><?php esc_html_e( 'Location', 'wp-job-manager' ); ?></label>
-			<input type="text" name="search_location" id="search_location" placeholder="<?php esc_attr_e( 'Location', 'wp-job-manager' ); ?>" value="<?php echo esc_attr( $location ); ?>" />
-		</div>
 
-		<?php if( apply_filters( 'job_manager_job_filters_show_remote_position', get_option('job_manager_enable_remote_position', true ), $atts ) ) : ?>
+
+		<?php if( 1 < 0 && apply_filters( 'job_manager_job_filters_show_remote_position', get_option('job_manager_enable_remote_position', true ), $atts ) ) : ?>
 			<div class="search_remote_position">
 				<input type="checkbox" class="input-checkbox" name="remote_position" id="remote_position" placeholder="<?php esc_attr_e( 'Location', 'wp-job-manager' ); ?>" value="1" <?php checked(! empty( $remote_position ) ); ?> />
 				<label for="remote_position" id="remote_position_label"><?php esc_html_e( 'Remote positions only', 'wp-job-manager' ); ?></label>
@@ -57,22 +75,6 @@ do_action( 'job_manager_job_filters_before', $atts );
 				<?php else : ?>
 					<?php job_manager_dropdown_categories( [ 'taxonomy' => 'job_listing_category', 'hierarchical' => 1, 'show_option_all' => __( 'Any category', 'wp-job-manager' ), 'name' => 'search_categories', 'orderby' => 'name', 'selected' => $selected_category, 'multiple' => false, 'hide_empty' => true ] ); ?>
 				<?php endif; ?>
-			</div>
-		<?php endif; ?>
-
-		<?php
-		/**
-		 * Show the submit button on the job filters form.
-		 *
-		 * @since 1.33.0
-		 *
-		 * @param bool $show_submit_button Whether to show the button. Defaults to true.
-		 * @return bool
-		 */
-		if ( apply_filters( 'job_manager_job_filters_show_submit_button', true ) ) :
-		?>
-			<div class="search_submit">
-				<input type="submit" value="<?php esc_attr_e( 'Search Jobs', 'wp-job-manager' ); ?>">
 			</div>
 		<?php endif; ?>
 

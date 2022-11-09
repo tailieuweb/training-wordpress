@@ -3,7 +3,7 @@ jQuery(document).ready(function ($) {
 $('.wpcf7-response-output').remove();
 
 document.addEventListener( 'wpcf7invalid', function( event ) {
-    
+
     swal({
   		title: '<strong>'+cf7_popups_val.msg1+'</strong>',
   		type: 'error',
@@ -12,7 +12,7 @@ document.addEventListener( 'wpcf7invalid', function( event ) {
   		showConfirmButton: false,
 	})
 
-    
+
 }, false );
 
 
@@ -37,13 +37,16 @@ document.addEventListener( 'wpcf7mailfailed', function( event ) {
 }, false );
 
 document.addEventListener( 'wpcf7mailsent', function( event ) {
+	console.log('wpcf7mailsent');
+	jQuery('.popmake-close').click();
     swal({
   		title: '<strong>'+cf7_popups_val.msg6+'</strong>',
   		type: 'success',
   		html: cf7_popups_val.msg7,
   		showCloseButton: true,
   		showConfirmButton: false,
-	})
+	});
+	jQuery('.popmake-close').click();
 }, false );
 
 
