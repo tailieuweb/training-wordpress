@@ -19,19 +19,33 @@ if ( $ed_jobposting && jobscout_is_wp_job_manager_activated() && $job_title  ) {
         }
         ?>
     </div>
-    <section id="job-posting-section" class="top-job-section">
-        <div class="container">
-            <?php
-                if( $job_title ) echo '<h2 class="section-title">'. esc_html( $job_title ) .'</h2>';
-                if( jobscout_is_wp_job_manager_activated() && $count_posts->publish != 0 ){ ?>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <?php echo do_shortcode('[jobs show_filters="false" post_status="publish"]'); ?>
-                        </div>
-                    </div>
-                <?php }
-            ?>
+    <div id="acc-content"><!-- .site-header -->
+        <div id="content" class="site-content">
+            <div class="container">
+
+                <div id="primary" class="content-area">
+                    <main id="main" class="site-main">
+                        <article id="post-10" class="post-10 page type-page status-publish hentry">
+                            <header class="entry-header">
+                            <h1 class="entry-title" style="text-align: center;">TÌM KIẾM CÔNG VIỆC</h1>
+                            </header>
+                            <div class="entry-content" itemprop="text">
+                            <?php
+                            /**
+                             * Content
+                             *
+                             * @hooked jobscout_content_start
+                             */
+                            echo do_shortcode('[jobs]');
+                            ?>
+                            </div>
+                        </article>
+                    </main>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+
+
     <?php
 }

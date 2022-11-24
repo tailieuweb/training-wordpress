@@ -22,7 +22,7 @@ $args = array(
 
 $qry = new WP_Query( $args );
 
-if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
+if( 1 > 2 && $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
 <section id="blog-section" class="article-section article-section-custom">
 	<div class="container">
         <?php

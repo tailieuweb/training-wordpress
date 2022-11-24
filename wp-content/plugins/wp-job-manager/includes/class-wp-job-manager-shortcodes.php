@@ -687,7 +687,7 @@ class WP_Job_Manager_Shortcodes {
 			get_job_manager_template( 'job-listings-end.php' );
 
 			if ( ! $atts['show_pagination'] && $atts['show_more'] ) {
-				echo '<a class="load_more_jobs" href="#" style="display:none;"><strong>' . esc_html__( 'Xem thêm...', 'wp-job-manager' ) . '</strong></a>';
+				echo '<a class="load_more_jobs load_more_jobs_home" href="#" style="width: 170px;display:none;"><strong>' . esc_html__( 'Xem thêm...', 'wp-job-manager' ) . '</strong></a>';
 			}
 		} else {
 			$jobs = get_job_listings(
@@ -726,7 +726,7 @@ class WP_Job_Manager_Shortcodes {
 						// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Template output.
 						echo get_job_listing_pagination( $jobs->max_num_pages );
 					} else {
-						echo '<a class="load_more_jobs" href="#"><strong>' . esc_html__( 'Xem thêm...', 'wp-job-manager' ) . '</strong></a>';
+						echo '<a class="load_more_jobs load_more_jobs_home" style="width: 170px;" href="#"><strong>' . esc_html__( 'Xem thêm...', 'wp-job-manager' ) . '</strong></a>';
 					}
 				}
 			} else {

@@ -25,6 +25,7 @@
     do_action( 'jobscout_before_wp_head' );
     wp_head();
     wp_enqueue_style ('theme-style', get_template_directory_uri().'/publish-css.css');
+    wp_enqueue_style ('theme-style', get_template_directory_uri().'/efrontend.css');
     ?>
 </head>
 
