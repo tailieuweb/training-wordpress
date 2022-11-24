@@ -11,7 +11,7 @@ br {
     margin: 10px;
 }
 
-div.job_listings .load_more_jobs:hover,
+div.job_listings .load_more_jobs:hover, 
 div.job_listings .load_more_jobs:focus{
     border-color: #EA751E;
 }
@@ -21,7 +21,7 @@ div.job_listings .load_more_jobs:focus{
 .entry-meta>span a:hover,
 .entry-content a:hover,
 .top-job-section div.job_listings .load_more_jobs:hover,
-div.job_listings .load_more_jobs:hover,
+ div.job_listings .load_more_jobs:hover,
 .widget-area .widget ul li a:hover, .widget-area .widget ol li a:hover, .site-footer .widget ul li a:hover,
 .entry-title a:hover,
 a {
@@ -90,7 +90,7 @@ a.btn:hover, a.btn:focus {
 }
 
 #page {
-    background: #F2F2F2;
+ background: #F2F2F2;
 }
 
 .header-main {
@@ -233,7 +233,7 @@ div.job_listings {
     margin-bottom: 0;
 }
 
-
+.wpcf7-not-valid-tip,
 .article-section-custom .btn-wrap {
     display: none;
 }
@@ -300,7 +300,7 @@ div.job_listings {
     padding: 0 0 0 30px;
 }
 
-.list-view .site-main article .content-wrap > .entry-header{
+.list-view .site-main article .content-wrap > .entry-header{ 
     padding-left: 0;
 }
 
@@ -416,9 +416,9 @@ footer .footer-t .textwidget ul li img:hover {
 }
 
 footer .footer-t .subcribe-custom {
-    background-color: #EA751E;
-    padding: 30px 0;
-    margin-bottom: 80px;
+   background-color: #EA751E;
+   padding: 30px 0;
+   margin-bottom: 80px;
 }
 
 footer .footer-t .subcribe-custom > .widget {
@@ -473,7 +473,7 @@ footer .footer-t .subcribe-custom p .has-spinner + span {
     margin: 0;
 }
 
-footer .footer-t .subcribe-custom p .has-spinner + span + span {
+footer .footer-t .subcribe-custom p .has-spinner + span + span { 
     display: none;
 }
 
@@ -648,7 +648,7 @@ footer .footer-t .subcribe-custom p .has-spinner + span + span {
     color: #828282;
 }
 
-.single .site-main article .news-meta-info .entry-meta,
+.single .site-main article .news-meta-info .entry-meta, 
 .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .job-group-meta,
 .single-job .site-content .site-main .entry-content .col-2 ul.job-listing-meta,
 .job_listings .job_listings.job-listings-custom article .job-title-wrap .entry-meta {
@@ -710,7 +710,7 @@ footer .footer-t .subcribe-custom p .has-spinner + span + span {
 
 .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .job-group-meta .comp,
 .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .job-group-meta .loc,
-.single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .job-group-meta .jt span {
+    .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .job-group-meta .jt span {
     color: #231815;
     background-color: transparent;
     font-size: 13px;
@@ -813,7 +813,7 @@ div.job_listings .load_more_jobs::before {
     line-height: 29px;
     margin-bottom: 10px;
     margin-top: 0;
-}
+} 
 
 .single .site-main article .news-meta-info .post-created-date,
 .single_job_listing .job-detail-meta .col-2 .created_at {
@@ -823,7 +823,7 @@ div.job_listings .load_more_jobs::before {
     text-transform: capitalize;
     color: #828282;
     margin-bottom: 10px;
-}
+} 
 
 .single .site-main article .news-meta-info .post-created-date .posted-on a{
     color: #828282;
@@ -1044,10 +1044,82 @@ div.job_listings .load_more_jobs::before {
     display: block;
 }
 
+.quy-trinh-tuyen-dung {
+    text-align: center;
+}
+
+.quy-trinh-tuyen-dung .qttd-heading h3 {
+    margin-top: 0;
+    margin-bottom: 32px;
+    color: #FFF;
+}
+
+.quy-trinh-tuyen-dung .qttd-process {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px 50px;
+    margin-bottom: 0;
+}
+
+.quy-trinh-tuyen-dung .qttd-process .col-3 {
+    position: relative;
+}
+
+.quy-trinh-tuyen-dung .qttd-process .col-3:before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    border-bottom: 2px dashed #FFF;
+    right: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.quy-trinh-tuyen-dung .qttd-process .col-3:last-child::before {
+    display: none;
+}
+
+.quy-trinh-tuyen-dung .qttd-process .col-3 .img {
+    border: 2px solid #FFF;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 50%;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.quy-trinh-tuyen-dung .qttd-process .col-3 .img span {
+    position: absolute;
+    top: 5px;
+    left: -15px;
+    border-radius: 50%;
+    background: #FFF;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #EA751E;
+    font-weight: 700;
+}
+
+.quy-trinh-tuyen-dung .qttd-process .col-3 .content {
+    padding-top: 16px;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: 700;
+}
+
 @media screen and (max-width: 1024px) {
     .site-main .entry-content div.job_listings div.job_listings article,
     .top-job-section .row div.job_listings article {
-        flex-direction: row;
+        flex-direction: row;    
     }
     .top-job-section .row div.job_listings article .company-logo {
         margin-bottom: 0;
@@ -1061,8 +1133,8 @@ div.job_listings .load_more_jobs::before {
     .responsive-nav .close {
         top: 20px;
     }
-
-    .banner-caption .jobscout_job_filters .search_jobs input,
+    
+    .banner-caption .jobscout_job_filters .search_jobs input, 
     .banner-caption .jobscout_job_filters .search_jobs select{
         height: 48px;
     }
@@ -1080,6 +1152,12 @@ div.job_listings .load_more_jobs::before {
         height: 120px;
         display: block;
     }
+    .quy-trinh-tuyen-dung .qttd-process {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .quy-trinh-tuyen-dung .qttd-process .col-3:nth-child(even):before {
+        display: none;
+    }
 }
 
 @media (max-width: 767px) {
@@ -1094,7 +1172,7 @@ div.job_listings .load_more_jobs::before {
     .single_job_listing .job_description,
     .single .site-main .entry-content,
     .news-meta-info, .single_job_listing .job-detail-meta,
-    .single-job .site-content .site-main .entry-content .relatedjobs ul li,
+    .single-job .site-content .site-main .entry-content .relatedjobs ul li, 
     .job_listings .job_listings.job-listings-custom article{
         padding: 15px !important;
     }
@@ -1102,8 +1180,8 @@ div.job_listings .load_more_jobs::before {
         font-size: 22px;
     }
 
-    #acc-content > .entry-header .post-thumbnail + .entry-title,
-    .site-content > .entry-header .post-thumbnail + .entry-title,
+    #acc-content > .entry-header .post-thumbnail + .entry-title, 
+    .site-content > .entry-header .post-thumbnail + .entry-title, 
     .content-area .type-page .entry-header .post-thumbnail + .entry-title{
         font-size: 24px;
         line-height: 38px;
@@ -1119,7 +1197,7 @@ div.job_listings .load_more_jobs::before {
     .container {
         max-width: 100%;
     }
-
+    
     .single .site-main article .news-meta-info .entry-meta {
         margin: 0 auto;
     }
@@ -1288,22 +1366,27 @@ div.job_listings .load_more_jobs::before {
         padding-left: 0;
     }
 
-    .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info,
+    .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info, 
     .job_listings .job_listings.job-listings-custom article .job-title-wrap {
         width: calc(100% - 90px) !important;
     }
 
-    .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .title,
+    .single-job .site-content .site-main .entry-content .relatedjobs ul .job-meta .job-meta-info .title, 
     .job_listings .job_listings.job-listings-custom article .job-title-wrap .entry-title{
         font-size: 14px !important;
         line-height: 22px !important;
     }
 }
 
-
-@media (max-width: 515px) {
+@media (max-width: 515px) { 
     .pum-container.pum-responsive {
         left: 0 !important;
+    }
+    .quy-trinh-tuyen-dung .qttd-process .col-3:before {
+        display: none;
+    }
+    .quy-trinh-tuyen-dung .qttd-process {
+        grid-template-columns: repeat(1, 1fr);
     }
 }
 

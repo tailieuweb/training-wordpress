@@ -53,6 +53,11 @@ function jobscout_widgets_init(){
             'id'          => 'footer-subscribe',
             'description' => __( 'Add footer subscribe widgets here.', 'jobscout' ),
         ),
+        'footer-intro'=> array(
+            'name'        => __( 'Footer Intro', 'jobscout' ),
+            'id'          => 'footer-intro',
+            'description' => __( 'Add footer intro widgets here.', 'jobscout' ),
+        ),
         'footer-copyright'=> array(
             'name'        => __( 'Footer Copyright', 'jobscout' ),
             'id'          => 'footer-copyright',

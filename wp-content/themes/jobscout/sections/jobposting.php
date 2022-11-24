@@ -11,6 +11,14 @@ $count_posts       = wp_count_posts('job_listing');
 
 if ( $ed_jobposting && jobscout_is_wp_job_manager_activated() && $job_title  ) {
     ?>
+    <div class="pds-intro">
+        <?php
+        $has_widget_subcribe = is_active_sidebar('footer-intro');
+        if ($has_widget_subcribe) {
+            dynamic_sidebar('footer-intro');
+        }
+        ?>
+    </div>
     <section id="job-posting-section" class="top-job-section">
         <div class="container">
             <?php
