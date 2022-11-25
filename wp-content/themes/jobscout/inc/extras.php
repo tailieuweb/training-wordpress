@@ -165,8 +165,8 @@ if( ! function_exists( 'jobscout_primary_nagivation' ) ) :
 */
 function jobscout_primary_nagivation(){
 
-    $post_job_label  = get_theme_mod( 'post_job_label', __( 'Đăng tìm việc', 'jobscout' ) );
-    $post_job_url    = get_theme_mod( 'post_job_url', '#' );
+    $post_job_label  = get_theme_mod( 'post_job_label', __( 'Tuyển dụng', 'jobscout' ) );
+    $post_job_url    = get_theme_mod( 'post_job_url', '/dang-tin-tuyen-dung' );
     ?>
     	<nav id="site-navigation" class="main-navigation" role="navigation" itemscope itemtype="https://schema.org/SiteNavigationElement">
         <button class="toggle-btn" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".close-main-nav-toggle">

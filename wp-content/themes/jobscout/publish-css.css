@@ -862,6 +862,30 @@ div.job_listings .load_more_jobs:hover, div.job_listings .load_more_jobs:focus {
     background-color: #fcfcfc;
     border-bottom: 1px solid #eee;
 }
+
+.dang_ky_tim_viec+ul.job_listings {
+    border-top: 0;
+}
+ .dang_ky_tim_viec {
+    text-align: center;
+    display: block;
+    padding: 1em 1em 1em 2em;
+    border-bottom: 1px solid #eee;
+    font-weight: bold;
+     margin: 0 auto;
+}
+.dang_ky_tim_viec.loading {
+    background: url(../images/ajax-loader-ea183bf26ae76dec039869d4bc7060cb.gif) no-repeat center;
+}
+.dang_ky_tim_viec.loading strong {
+    visibility: hidden;
+}
+.dang_ky_tim_viec:hover, .dang_ky_tim_viec:focus {
+    background-color: #fcfcfc;
+    border-bottom: 1px solid #eee;
+}
+
+
 .job_listing_preview {
     padding: 0 1em 1em;
     border: 5px solid #eee;
