@@ -34,5 +34,20 @@
     do_action( 'jobscout_after_footer' );
 
     wp_footer(); ?>
+
+
+    <script type="text/javascript">
+            jQuery( document ).ready(function() {
+                if (jQuery('.job_application').length == 1) {
+                    // Set job -url
+                    var job_url = jQuery('.at-above-post').data('url');
+                    jQuery('#url_job').val(job_url);
+
+                    // Set job -title
+                    var job_title = jQuery('.job-title').text();
+                    jQuery('#job_title').val(job_title);
+                }
+            });
+    </script>
 </body>
 </html>
