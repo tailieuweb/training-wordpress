@@ -32,8 +32,20 @@ do_action( 'job_manager_job_filters_before', $atts );
             </div>
 
             <div class="search_location">
-                <label for="search_location"><?php esc_html_e( 'Khu vực', 'wp-job-manager' ); ?></label>
-                <input type="text" name="search_location" id="search_location" placeholder="<?php esc_attr_e( 'Khu vực', 'wp-job-manager' ); ?>" value="<?php echo esc_attr( $location ); ?>" />
+                <?php
+                global $wpdb;
+                $table  = $wpdb->prefix . 'postmeta';
+                $sql = "SELECT DISTINCT SUBSTRING_INDEX(`meta_value`,',',-1) as location FROM `wp_postmeta` WHERE `meta_key` like '%location%' ORDER BY location";
+                $data = $wpdb->get_results($wpdb->prepare($sql));
+                ?>
+
+                <select id="search_location" name="search_location" value="location">
+                    <option value="">Location</option>
+                    <?php foreach ($data as $value) : ?>
+                        <option value="<?php echo $value->location; ?>"><?php echo $value->location; ?></option>
+                    <?php endforeach ?>
+                </select>
+
             </div>
             <?php
             /**
