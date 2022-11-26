@@ -2450,8 +2450,39 @@ div.job_listings .load_more_jobs::before {
 .user-dang-tin .thong-tin-ca-nhan,
 .user-dang-tin .kinh-nghiem-lam-viec {
     background-color: #FFF;
-    margin-top: 20px;
+    max-width: 900px;
+    margin: 20px auto 0 auto;
 }   
+
+.breadcrum-pds {
+    max-width: 900px;
+    margin: 20px auto 0 auto;
+}
+
+.breadcrum-pds a {
+    padding-right: 30px;
+    position: relative;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: capitalize;
+} 
+
+.breadcrum-pds a:before {
+    content: '/';
+    position: absolute;
+    right: 15px;
+    color: #BDBDBD;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.breadcrum-pds a:first-child {
+    color: #EA751E;
+}
+
+.breadcrum-pds a:last-child:before {
+    display: none;
+}
 
 .dang-tin-tuyen-dung form .content,
 .user-dang-tin .thong-tin-ca-nhan .content,
