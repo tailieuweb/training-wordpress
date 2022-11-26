@@ -22,8 +22,8 @@ if( $ed_banner && has_custom_header() ){ ?>
                             if( $banner_subtitle ) echo '<div class="description">' . wpautop( wp_kses_post( $banner_subtitle ) ) . '</div>';
                         ?>
                         <div class="btn-form-page">
-                            <a class="btn-ung-vien-dang-ky" href="#" >Ứng viên đăng ký</a>
-                            <a class="btn-nha-tuyen-dung" href="#" >Nhà tuyển dụng</a>
+                            <a class="btn-ung-vien-dang-ky" href="/dang-tin-kiem-viec" >Ứng viên đăng ký</a>
+                            <a class="btn-nha-tuyen-dung" href="/dang-ky-tuyen-dung" >採用を検討されている企業様はこちら</a>
                         </div>
                         <div class="form-wrap">
                             <div class="search-filter-wrap">
