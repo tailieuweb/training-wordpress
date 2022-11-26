@@ -2115,6 +2115,7 @@ div.job_listings .load_more_jobs::before {
     color: #FFF;
     width: calc(100% - 40px);
     text-align: center;
+    padding-top: 0;
 }
 
 .category-travel {
@@ -2353,10 +2354,18 @@ div.job_listings .load_more_jobs::before {
     width: 170px;
 }
 
+.header-main {
+    background-color: #FFF;
+}
+
 .pds-front .site-header {
     position: absolute;
     z-index: 10;
     width: 100%;
+}
+
+.pds-front .site-header .header-main {
+    background-color: transparent;
 }
 
 .pds-front .site-header .main-navigation ul li a,
