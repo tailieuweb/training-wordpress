@@ -21,25 +21,29 @@ if( $ed_banner && has_custom_header() ){ ?>
                             if( $banner_title ) echo '<h2 class="title">' . esc_html( $banner_title ) . '</h2>';
                             if( $banner_subtitle ) echo '<div class="description">' . wpautop( wp_kses_post( $banner_subtitle ) ) . '</div>';
                         ?>
+                        <div class="btn-form-page">
+                            <a class="btn-ung-vien-dang-ky" href="#" >Ứng viên đăng ký</a>
+                            <a class="btn-nha-tuyen-dung" href="#" >Nhà tuyển dụng</a>
+                        </div>
                         <div class="form-wrap">
                             <div class="search-filter-wrap">
                             <?php
-                                if ( jobscout_is_wp_job_manager_activated() ) {
-                                    if( $find_a_job_link ){
-                                        get_template_part('template-parts/header','form');
-                                    }else{
-                                         get_search_form();
-                                    }
-                                }else{
-                                    get_search_form();
-                                }
+//                                if ( jobscout_is_wp_job_manager_activated() ) {
+//                                    if( $find_a_job_link ){
+//                                        get_template_part('template-parts/header','form');
+//                                    }else{
+//                                         get_search_form();
+//                                    }
+//                                }else{
+//                                    get_search_form();
+//                                }
                             ?>
                             </div>
                         </div>
-                        <div class="submit-job">
-                            <p>Hoặc</p>
-                            <a class="btn user-submit-job pum-trigger btn-secondary" href="#" style="cursor: pointer;">Đăng tìm việc</a>
-                        </div>
+<!--                        <div class="submit-job">-->
+<!--                            <p>Hoặc</p>-->
+<!--                            <a class="btn user-submit-job pum-trigger btn-secondary" href="#" style="cursor: pointer;">Đăng tìm việc</a>-->
+<!--                        </div>-->
                     </div>
                 </div>
             </div>

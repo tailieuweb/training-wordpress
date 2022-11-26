@@ -85,7 +85,12 @@ if( ! function_exists( 'jobscout_page_start' ) ) :
  * Page Start
 */
 function jobscout_page_start(){ ?>
-    <div id="page" class="site">
+    <?php if( is_front_page() ){?>
+        <div id="page" class="site pds-front">
+    <?php } else { ?>
+        <div id="page" class="site">
+    <?php } ?>
+
         <a class="skip-link screen-reader-text" href="#acc-content"><?php esc_html_e( 'Skip to content (Press Enter)', 'jobscout' ); ?></a>
     <?php
 }
