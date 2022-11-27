@@ -2570,9 +2570,6 @@ div.job_listings .load_more_jobs::before {
     margin-top: 0;
 }
 
-.site-main .entry-content div.job_listings div.job_listings article {
-    align-items: center;
-}
 @media screen and (max-width: 1024px) {
     .pds-front .job_filters .search_jobs div.search_submit {
         width: 100%;
