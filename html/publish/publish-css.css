@@ -2566,6 +2566,16 @@ div.job_listings .load_more_jobs::before {
     color: #EA751E;
 }
 
+.user-dang-tin .thong-tin-ca-nhan .district-ward {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-dang-tin .thong-tin-ca-nhan .district-ward .your-district,
+.user-dang-tin .thong-tin-ca-nhan .district-ward .your-ward {
+    width: calc(50% - 10px);
+}
+
 .dang-tin-tuyen-dung form .btn-controll span,
 .user-dang-tin .btn-controll span {
     display: none;
