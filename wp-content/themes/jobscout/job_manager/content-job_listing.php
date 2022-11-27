@@ -44,6 +44,15 @@ $job_overview = get_the_excerpt($post);
 
 
 		<div class="entry-meta">
+            <?php
+            if ( get_option( 'job_manager_enable_types' ) ) {
+                $types = wpjm_get_the_job_types();
+                if ( ! empty( $types ) ) : foreach ( $types as $jobtype ) : ?>
+                    <li class="job-type <?php echo esc_attr( sanitize_title( $jobtype->slug ) ); ?>"><?php echo esc_html( $jobtype->name ); ?></li>
+                <?php endforeach; endif;
+            }
+            do_action( 'job_listing_meta_end' );
+            ?>
 			<?php
 				do_action( 'job_listing_meta_start' );
 
@@ -64,15 +73,6 @@ $job_overview = get_the_excerpt($post);
 				<?php the_job_location( true ); ?>
 			</div>
 
-			<?php
-				if ( get_option( 'job_manager_enable_types' ) ) {
-					$types = wpjm_get_the_job_types();
-					if ( ! empty( $types ) ) : foreach ( $types as $jobtype ) : ?>
-						<li class="job-type <?php echo esc_attr( sanitize_title( $jobtype->slug ) ); ?>"><?php echo esc_html( $jobtype->name ); ?></li>
-					<?php endforeach; endif;
-				}
-				do_action( 'job_listing_meta_end' );
-			?>
 		</div>
 	</div>
 
