@@ -2609,6 +2609,10 @@ div.job_listings .entry-header .entry-title {
     margin-bottom: 0;
 }
 
+.site-main .entry-content div.job_listings div.job_listings article {
+    align-items: center;
+}
+
 @media screen and (max-width: 1024px) {
     .job_filters .search_jobs div.search_submit {
         width: 100%;
