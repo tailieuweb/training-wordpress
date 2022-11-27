@@ -1734,6 +1734,10 @@ footer .footer-t .subcribe-custom p .has-spinner + span + span {
     text-align: center;
 }
 
+.site-content .about-center {
+    text-align: left;
+}
+
 .site-content .about-center .title {
     color: #EA751E;
     font-size: 18px;
