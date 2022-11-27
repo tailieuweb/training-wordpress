@@ -2375,7 +2375,7 @@ div.job_listings .load_more_jobs::before {
 }
 
 .pds-front .banner-caption-custom .form-wrap,
-.pds-front .site-header .menu-wrap .btn-wrap {
+.site-header .menu-wrap .btn-wrap {
     display: none;
 }
 
