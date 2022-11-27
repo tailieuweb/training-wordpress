@@ -156,7 +156,7 @@ class PUM_Shortcode_PopupClose extends PUM_Shortcode {
 		$href   = 'a' === $atts['tag'] ? "href='" . esc_attr( $atts['href'] ) . "'" : '';
 		$target = 'a' === $atts['tag'] && ! empty( $atts['target'] ) ? "target='" . esc_attr( $atts['target'] ) . "'" : '';
 
-		$return = "<$tag $href $target class='pum-close popmake-close $classes' $do_default>$esc_content</$tag>";
+		$return = "<$tag $href $target class='pds-close pum-close popmake-close $classes' $do_default>$esc_content</$tag>";
 
 		return $return;
 	}

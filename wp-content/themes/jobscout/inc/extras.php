@@ -128,9 +128,17 @@ function jobscout_site_branding( $responsive = false ){
     <div class="site-branding<?php echo esc_attr( $branding_class ); ?>" itemscope itemtype="https://schema.org/Organization"> <!-- logo-text -->
         <?php
             if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
-                echo '<div class="site-logo">';
-                the_custom_logo();
-                echo '</div>';
+                if (!is_front_page()) {
+                    echo '<div class="site-logo">';
+                    the_custom_logo();
+                    echo '</div>';
+                } else { ?>
+                    <div class="site-logo">
+                    <a href="http://wordpress.local/" class="custom-logo-link" rel="home" aria-current="page">
+                    <img width="295" height="48" src="/publish/img/logo-white.png" class="custom-logo" alt="Plan・Do・See Global Inc.">
+                    </a>
+                    </div>
+                <?php }?> <?php
             }
 
             echo '<div class="site-title-wrap">';

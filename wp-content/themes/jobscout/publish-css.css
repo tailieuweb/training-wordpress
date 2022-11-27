@@ -1936,11 +1936,18 @@ div.job_listings .load_more_jobs::before {
     color: #231815;
     padding: 30px;
 }
+.btn-control2  .wpcf7-spinner {
+    display: none;
+}
 
+.pum-close:not(.pds-close) {
+    display: none
+}
 .pum-theme-default-theme .pum-container .pum-close {
     line-height: 20px;
     background-color: transparent;
     color: #000;
+    border-radius: 0;
 }
 
 .pum-theme-default-theme .pum-container > div {
@@ -2430,7 +2437,7 @@ div.job_listings .load_more_jobs::before {
     left: 15px;
 }
 
-.pds-front .job_filters .search_location:before {
+.pds-front .job_filters .search_location:before, .job-control-search .search_location:before {
     content: url(/publish/img/room.png);
     position: absolute;
     top: 50%;
