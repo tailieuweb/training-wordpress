@@ -870,13 +870,13 @@ div.job_listings .load_more_jobs:hover, div.job_listings .load_more_jobs:focus {
 .dang_ky_tim_viec+ul.job_listings {
     border-top: 0;
 }
- .dang_ky_tim_viec {
+.dang_ky_tim_viec {
     text-align: center;
     display: block;
     padding: 1em 1em 1em 2em;
     border-bottom: 1px solid #eee;
     font-weight: bold;
-     margin: 0 auto;
+    margin: 0 auto;
 }
 .dang_ky_tim_viec.loading {
     background: url(../images/ajax-loader-ea183bf26ae76dec039869d4bc7060cb.gif) no-repeat center;
@@ -1392,7 +1392,7 @@ div.job_listings {
 
 .wpcf7-not-valid-tip,
 .article-section-custom .btn-wrap {
-    display: none;
+    /*display: none;*/
 }
 
 .article-section-custom .article-wrap article {
@@ -1936,11 +1936,18 @@ div.job_listings .load_more_jobs::before {
     color: #231815;
     padding: 30px;
 }
+.btn-control2  .wpcf7-spinner {
+    display: none;
+}
 
+.pum-close:not(.pds-close) {
+    display: none
+}
 .pum-theme-default-theme .pum-container .pum-close {
     line-height: 20px;
     background-color: transparent;
     color: #000;
+    border-radius: 0;
 }
 
 .pum-theme-default-theme .pum-container > div {
@@ -2379,8 +2386,8 @@ div.job_listings .load_more_jobs::before {
     display: none;
 }
 
-.pds-front .site-header .main-navigation ul li:hover > a, 
-.pds-front .site-header .main-navigation ul li.current-menu-item>a, 
+.pds-front .site-header .main-navigation ul li:hover > a,
+.pds-front .site-header .main-navigation ul li.current-menu-item>a,
 .pds-front .site-header .main-navigation ul li.current_page_item>a {
     border-bottom: none;
 }
@@ -2412,7 +2419,7 @@ div.job_listings .load_more_jobs::before {
     padding-bottom: 12px;
 }
 
-.job_filters .search_jobs .search_keywords input, 
+.job_filters .search_jobs .search_keywords input,
 .job_filters .search_jobs .search_location select{
     padding-left: 40px;
 }
@@ -2423,15 +2430,15 @@ div.job_listings .load_more_jobs::before {
 }
 
 .job_filters .search_jobs .search_keywords:before {
-    content: url(../publish/img/search.png);
+    content: url(/publish/img/search.png);
     position: absolute;
     top: 50%;
     transform: translateY(-40%);
     left: 15px;
-} 
+}
 
-.pds-front .job_filters .search_location:before {
-    content: url(../publish/img/room.png);
+.pds-front .job_filters .search_location:before, .job-control-search .search_location:before {
+    content: url(/publish/img/room.png);
     position: absolute;
     top: 50%;
     transform: translateY(-40%);
@@ -2461,7 +2468,7 @@ div.job_listings .load_more_jobs::before {
     background-color: #FFF;
     max-width: 900px;
     margin: 20px auto 0 auto;
-}   
+}
 
 .breadcrum-pds {
     max-width: 900px;
@@ -2474,7 +2481,7 @@ div.job_listings .load_more_jobs::before {
     font-size: 13px;
     font-weight: 500;
     text-transform: capitalize;
-} 
+}
 
 .breadcrum-pds a:before {
     content: '/';
@@ -2516,7 +2523,7 @@ div.job_listings .load_more_jobs::before {
 
 .dang-tin-tuyen-dung form .content label,
 .user-dang-tin .thong-tin-ca-nhan .content label:not(.user-submit-heading),
-.user-dang-tin .kinh-nghiem-lam-viec .content label:not(.user-submit-heading) { 
+.user-dang-tin .kinh-nghiem-lam-viec .content label:not(.user-submit-heading) {
     font-size: 13px;
     color: #231815;
     font-weight: 400;
@@ -2533,7 +2540,7 @@ div.job_listings .load_more_jobs::before {
 }
 
 .dang-tin-tuyen-dung form .btn-controll label,
-.user-dang-tin .btn-controll label { 
+.user-dang-tin .btn-controll label {
     display: inline-block;
     border: 1px solid #231815;
     color: #231815;
