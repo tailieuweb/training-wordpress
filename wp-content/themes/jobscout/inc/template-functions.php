@@ -207,7 +207,7 @@ function jobscout_content_start(){
                 }
             }
         ?>
-        <?php if (is_page('gioi-thieu') || is_page('lien-he') || is_page('dang-tin-kiem-viec') || is_page('dang-tin-tuyen-dung')): ?>
+        <?php if (is_page('gioi-thieu') || is_page('lien-he') || is_page('ung-vien-dang-ky') || is_page('dang-tin-tuyen-dung')): ?>
             <div class="">
         <?php else: ?>
             <?php

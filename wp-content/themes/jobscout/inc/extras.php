@@ -193,7 +193,7 @@ function jobscout_primary_nagivation(){
     		?>
     	</nav><!-- #site-navigation -->
         <?php if( $post_job_label || $post_job_url ){ ?>
-            <?php if (!is_page('dang-tin-kiem-viec') && !is_page('dang-tin-tuyen-dung')) {?>
+            <?php if (!is_page('ung-vien-dang-ky') && !is_page('dang-tin-tuyen-dung')) {?>
             <div class="btn-wrap user-submit-job">
                 <a class="btn user-submit-job" href="<?php echo esc_url( $post_job_url ) ?>"><?php echo esc_html( $post_job_label ) ?></a>
             </div>

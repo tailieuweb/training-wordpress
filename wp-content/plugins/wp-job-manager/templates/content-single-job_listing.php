@@ -29,7 +29,7 @@ if ( job_manager_user_can_view_job_listing( $post->ID ) ) : ?>
                 </div>
                 <div class="col-2">
                     <h1 class="job-title"><?php the_title(); ?></h1>
-                     <span class="created_at"><?php echo the_time('d-m-Y', $post->post_date) ?></span>
+                     <span class="created_at">Ngày tạo: <?php echo the_time('d-m-Y', $post->post_date) ?></span>
                     <?php get_job_manager_template( 'content-single-job_listing-meta.php', [] ); ?>
                 </div>
                 <div class="col-3">

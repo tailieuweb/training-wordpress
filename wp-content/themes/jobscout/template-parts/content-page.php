@@ -12,7 +12,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 
-         if (is_page('gioi-thieu') || is_page('lien-he') || is_page('dang-tin-kiem-viec') || is_page('dang-tin-tuyen-dung')) {?>
+         if (is_page('gioi-thieu') || is_page('lien-he') || is_page('ung-vien-dang-ky') || is_page('dang-tin-tuyen-dung')) {?>
              <header class="entry-header">
                  <figure class="post-thumbnail">
                      <?php the_post_thumbnail( 'jobscout-single-fullwidth', array( 'itemprop' => 'image' ) ); ?>
