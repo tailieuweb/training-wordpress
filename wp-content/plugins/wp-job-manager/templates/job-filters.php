@@ -99,3 +99,8 @@ do_action( 'job_manager_job_filters_before', $atts );
 <?php do_action( 'job_manager_job_filters_after', $atts ); ?>
 
 <noscript><?php esc_html_e( 'Your browser does not support JavaScript, or it is disabled. JavaScript must be enabled in order to view listings.', 'wp-job-manager' ); ?></noscript>
+
+<?php if (is_page('viec-lam')) {?>
+    <header class="entry-header">
+        <h1 class="entry-title">Việc làm</h1> </header>
+<?php } ?>

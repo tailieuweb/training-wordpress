@@ -2617,6 +2617,10 @@ div.job_listings .entry-header .entry-title {
     align-items: center;
 }
 
+.wp-job-manager-showing-all {
+    display: none !important;
+}
+
 @media screen and (max-width: 1024px) {
     .job_filters .search_jobs div.search_submit {
         width: 100%;

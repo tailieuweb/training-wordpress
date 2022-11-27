@@ -313,7 +313,7 @@ function jobscout_entry_header(){ ?>
 }
 endif;
 add_action( 'jobscout_post_entry_content', 'jobscout_entry_header', 10 );
-add_action( 'jobscout_before_page_entry_content', 'jobscout_entry_header', 10 );
+//add_action( 'jobscout_before_page_entry_content', 'jobscout_entry_header', 10 );
 add_action( 'jobscout_before_single_post_entry_content', 'jobscout_entry_header', 10 );
 
 if( ! function_exists( 'jobscout_entry_content' ) ) :

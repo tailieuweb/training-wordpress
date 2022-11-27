@@ -36,7 +36,7 @@ if ( job_manager_user_can_view_job_listing( $post->ID ) ) : ?>
                     [addthis tool="addthis_inline_share_toolbox_2ptb"]
                     <?php if ( candidates_can_apply() ) : ?>
                     <div class="job_application application">
-                        <input type="button" class="application_button button" value="Apply for job">
+                        <input type="button" class="application_button button" value="Ứng tuyển">
                     </div>
                     <?php endif; ?>
                 </div>
