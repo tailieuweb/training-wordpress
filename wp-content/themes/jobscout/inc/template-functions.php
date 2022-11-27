@@ -67,7 +67,7 @@ function jobscout_responsive_header(){
                     ?>
 
                     <?php if( $post_job_label || $post_job_url ){ ?>
-                        
+
                     <?php } ?>
                </div>
             </div>
