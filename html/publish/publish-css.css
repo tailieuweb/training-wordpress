@@ -1,3 +1,6 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
 .clearfix {
     zoom: 1;
 }
@@ -2083,6 +2086,7 @@ div.job_listings .load_more_jobs::before {
 
 .button-register .dang_ky_tim_viec {
     margin-top: 15px;
+    font-weight: 700;
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .entry-meta .company-address,
