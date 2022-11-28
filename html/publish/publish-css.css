@@ -18744,7 +18744,6 @@ div.job_listings .load_more_jobs::before {
 .user-dang-tin .kinh-nghiem-lam-viec .content .user-submit-heading {
     font-size: 20px;
     font-weight: 700;
-    padding-bottom: 20px;
     display: block;
 }
 
@@ -18837,6 +18836,18 @@ div.job_listings .entry-header .entry-title {
     margin-bottom: 84px;
 }
 
+.wpcf7-not-valid-tip {
+    margin-top: 4px;
+}
+
+.wpcf7-list-item.first {
+    margin-left: 0;
+}
+
+select {
+    border-radius: 0;
+}
+
 @media screen and (max-width: 1024px) {
     .job_filters .search_jobs div.search_submit {
         width: 100%;
@@ -18890,6 +18901,13 @@ div.job_listings .entry-header .entry-title {
 }
 
 @media (max-width: 767px) {
+    .user-dang-tin .thong-tin-ca-nhan .district-ward{
+        flex-direction: column;
+    }
+    .user-dang-tin .thong-tin-ca-nhan .district-ward .your-district, 
+    .user-dang-tin .thong-tin-ca-nhan .district-ward .your-ward {
+        width: 100%;
+    }
     .pds-intro .home-3 .content-top .content-header {
         font-size: 18px;
         max-width: 100%;
